@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>098 Restaurant</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+        
+</head>
+<body>
+
+    <nav class="navbar sticky-top navbar-expand-lg">
+        <a class="navbar-brand" href="#home" id="brand"><img src="img/logo098.png" alt="logo" class="img-fluid"></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>                    
+                    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item" >
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#about">About Us</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" href="#menu">Menu</a>
+            </li>
+            <li class="nav-item" >
+                <a class="nav-link" href="#order">My Order</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul> 
+        </div>
+    </nav>
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- Me -->
+            <article id="home" class="panel intro">
+                <header>
+                    <h1 id="tituloInicio">098</h1>
+                    <p>by Fredes</p>
+                </header>
+
+                <section id="seccionInicio">
+                    <div id="carouselInicio" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img class="d-block w-100" src="img/magallanes.jpg" alt="First slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" src="img/punta-arenas.jpeg" alt="Second slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" src="img/diente-navarino.jpg" alt="Third slide">
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselInicio" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Anterior</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselInicio" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Siguiente</span>
+                        </a>
+                      </div>
+                </section>
+            </article>
+
+            <article id="about" class="panel">
+                <header>
+                    <h1>About Us</h1>
+                </header>
+                <section id="secAbout">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6 justify-content-center">
+                            <div class="container introduccion">
+                                <h2>¡Bienvenidos/as!</h2>
+                                <br>
+                                <p>En <b>Turismo Extremo Sur</b>, nos dedicamos a ofrecer experiencias únicas y emocionantes que te permiten explorar y conectar con la belleza natural de Punta Arenas y sus alrededores. <br><br>
+                                    Nuestra misión es proporcionar aventuras inolvidables, promoviendo el turismo responsable y sostenible en la región. Con un equipo apasionado y experto, nos esforzamos por brindar servicios de alta calidad que superen las 
+                                    expectativas de nuestros clientes, mientras preservamos y respetamos el entorno natural. <br><br>
+                                    En Turismo Extremo Sur, estamos comprometidos con la seguridad, la excelencia y la pasión por la aventura, ¡y esperamos compartir contigo la magia de este increíble destino!</p>
+                            </div>
+                            <img src="img/magallanes2.jpg" alt="magallanes" id="fotoNosotros">
+                        </div>
+                        <div class="col-lg-8 col-md-6">
+                            <div class="container equipo">
+                                <h2>Our Team:</h2>
+                                <br>
+                                <div class="row justify-content-center">
+                                  <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="card">
+                                      <img class="card-img-top" src="img/gladys.jpg" alt="gladys">
+                                      <div class="card-body">
+                                          <h3 class="card-title">Gladys Marín Millie</h5>
+                                          <p>General Manager</p>
+                                      </div>
+                                    </div>
+                                  </div> 
+                                  <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="card">
+                                      <img class="card-img-top" src="img/olga.jpg" alt="olga">
+                                      <div class="card-body">
+                                        <h3 class="card-title">Olga Montini</h5>
+                                        <p>Culinary Director</p>
+                                      </div>
+                                    </div>
+                                  </div> 
+                                  <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="card">
+                                      <img class="card-img-top" src="img/caroline.jpg" alt="caroline">
+                                      <div class="card-body">
+                                        <h3 class="card-title">Caroline Polachek</h5>
+                                        <p>Executive Chef</p>
+                                      </div>
+                                    </div> 
+                                  </div> 
+                                  <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="card">
+                                      <img class="card-img-top" src="img/fiona.jpg" alt="fiona">
+                                      <div class="card-body">
+                                        <h3 class="card-title">Fiona Apple McAfee</h5>
+                                        <p>Sous Chef</p>
+                                      </div>
+                                    </div>
+                                  </div> 
+                                  <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="card">
+                                        <img class="card-img-top" src="img/vicente.jpg" alt="vicente">
+                                        <div class="card-body">
+                                          <h3 class="card-title">Vicente Fredes Estuardo</h5>
+                                          <p>Web Programmer</p>
+                                        </div>
+                                    </div>
+                                  </div> 
+                                </div>
+                              </div>                             
+                        </div>
+                    </div>
+                </section>
+                
+
+            </article>
+
+            <article id="menu" class="panel">
+                <header>
+                    <h1 id="titulo">Our Menu</h1>
+                </header>
+                <section id="secMenu">
+                    
+                </section>
+            </article>
+
+            <article id="order" class="panel">
+                <header>
+                    <h1>Your Order:</h1>
+                </header>
+                <section id="secOrder">
+
+                </section>
+            </article>
+
+            <article id="contact" class="panel">
+                <header>
+                    <h1>Contact Form:</h1>
+                </header>
+                <section id="secContact">
+                    <form id="formContact">
+                        <div class="form-row justify-content-center">
+                            <div class="form-group col-lg-4 col-md-5">
+                                <label for="inputNombre">Name *</label>
+                                <input type="text" class="form-control" id="inputNombre" placeholder="Name">
+                                <div class="invalid-feedback" id="nombreError"></div>
+                            </div>
+                            <div class="form-group col-lg-4 col-md-5">
+                                <label for="inputApellido">Last Name *</label>
+                                <input type="text" class="form-control" id="inputApellido" placeholder="Last Name">
+                                <div class="invalid-feedback" id="apellidoError"></div>
+                            </div>
+                        </div>
+                        <div class="form-row justify-content-center">
+                            <div class="form-group col-lg-4 col-md-5">
+                                <label for="inputEmail">E-mail Address *</label>
+                                <input type="text" class="form-control" id="inputEmail" placeholder="user123@mail.com">
+                                <div class="invalid-feedback" id="emailError"></div>
+                            </div>
+                            <div class="form-group col-lg-4 col-md-5">
+                                <label for="inputTelefono">Phone Number</label>
+                                <input type="number" class="form-control" id="inputTelefono" placeholder="9XXXXXXXX">
+                                <div class="invalid-feedback" id="emailError">Please, enter a valid phone number</div>
+                            </div>
+                        </div>
+                        <div class="form-row justify-content-center">
+                            <div class="form-group col-lg-8 col-md-10">
+                            <label for="exampleFormControlTextarea1">Your Message *</label>
+                            <textarea class="form-control" id="inputMensaje" rows="6"></textarea>
+                            <div class="invalid-feedback" id="mensajeError">Your message can't be empty!</div>
+                            </div>
+                        </div>
+                        <div class="form-row justify-content-center">
+                            <div class="form-group col-md-12" style="text-align: center; vertical-align: middle;">
+                                <button type="button" class="btn btn-secondary" id="btnEnviar">Send</button>
+                            </div>  
+                        </div>
+                    </form> 
+                </section>	
+            </article>
+
+    <!-- Footer -->
+        <div id="footer">
+            <p class="copyright">
+                &copy; Vicente Fredes Estuardo - Analista Programador Computacional DUOC UC 2024
+            </p>
+        </div>
+    </div>
+
+
+    <script>
+
+        $(document).ready(function() {
+
+            // FUNCIONAMIENTO GENERAL
+
+                // Función para mostrar el artículo correspondiente al fragmento de URL
+                    function showArticleFromHash() {
+                        var hash = window.location.hash;
+                        if (hash) {
+                            $('.panel').hide(); // Oculta todos los artículos
+                            $(hash).show(); // Muestra el artículo correspondiente al fragmento de URL
+                        } else {
+                            // Si no hay fragmento en la URL (como en 'index.html'), mostrar el artículo de inicio
+                            $('#home').show();
+                        }
+                    }
+
+                    // Mostrar el artículo correspondiente al cargar la página
+                    showArticleFromHash();
+
+                // Función para actualizar el enlace activo en el navbar
+                    function actualizarEnlaceActivo() {
+                        // Obtener el ID del artículo actual del URL
+                        var articuloID = window.location.hash.substr(1);
+
+                        console.log(articuloID); // Testeo de variable
+
+                        // Quitar la clase 'active' de todos los enlaces de navegación
+                        $('.navbar-nav .nav-item').removeClass('active');
+
+                        // Si el ID del artículo está vacío o es 'home'
+                        if (!articuloID || articuloID === 'home') {
+                            // Agregar la clase 'active' al enlace de navegación correspondiente a la página de inicio -- parent() hace que se dirija a nav-item
+                            $('.navbar-nav .nav-link[href="#home"]').parent().addClass('active');
+                        } else {
+                            // Agregar la clase 'active' al enlace de navegación correspondiente al artículo actual
+                            $('.navbar-nav .nav-link[href="#' + articuloID + '"]').parent().addClass('active');
+                        }
+                    }
+
+                    // Llamar a la función de actualización del enlace activo cuando la página se carga por primera vez
+                    actualizarEnlaceActivo();
+
+                    // Manejar el cambio de fragmento de URL
+                    $(window).on('hashchange', function() {
+                        showArticleFromHash();
+                        actualizarEnlaceActivo();
+                    });
+                
+            // FIN FUNCIONAMIENTO GENERAL
+
+
+            // FORMULARIO DE CONTACTO
+
+			    // Variables con el formato que deben cumplir los campos de nombre, apellido y correo electrónico
+			    var formatoNombres = /^[a-zA-Z\u00C0-\u017F\s']+$/;
+			    var formatoCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                // Función que despliega un alert informando que el mensaje en el formulario de contacto se ha enviado (sin validación)
+                function mostrarConfirmaciónContacto() {
+                    window.alert('Message sent. Thank you for contacting us!');
+
+                    // Una vez que se envía y se recibe el mensaje, se limpia el formulario
+                    $("#formContact")[0].reset();
+                }
+
+                // Validación que se debe realizar cuando el usuario hace click en "Enviar"
+                $("#btnEnviar").click(function() {
+                        
+                    // variables con los valores de los input del usuario
+                    let nombre = $("#inputNombre").val();
+                    let apellido = $("#inputApellido").val();
+                    let correo = $("#inputEmail").val();
+                    let telefono = $("#inputTelefono").val();
+                    let mensaje = $("#inputMensaje").val();
+
+                    // variable booleana para verificar si el envío del formularo es valido - se inicia en true, y cambia a false en caso de que un campo no cumpla con los requisitos
+                    let formularioValido = true;
+
+                    // prints de testeo
+                    console.log(nombre + ' ' + apellido);
+                    console.log(correo);
+                    console.log(telefono);
+                    console.log(mensaje);
+
+					if (nombre.trim() == '') { // caso - campo obligatorio vacío
+						$("#inputNombre").addClass("is-invalid");
+						$("#nombreError").text("El nombre es requerido.").show();
+						formularioValido = false;
+					} else if (!formatoNombres.test(nombre)) { // caso - usuario puso números y/o caracteres especiales
+						$("#inputNombre").addClass("is-invalid");
+						$("#nombreError").text("Por favor ingrese un nombre válido.").show();
+						formularioValido = false;
+					}
+
+					if (apellido.trim() == '') { // caso - campo obligatorio vacío
+						$("#inputApellido").addClass("is-invalid"); 
+						$("#apellidoError").text("El apellido es requerido.").show();
+						formularioValido = false;
+					} else if (!formatoNombres.test(apellido)) { // caso - usuario puso números y/o caracteres especiales
+						$("#inputApellido").addClass("is-invalid");
+						$("#apellidoError").text("Por favor ingrese un apellido válido.").show();
+						formularioValido = false;
+					}
+
+					if (correo.trim() == '') { // caso - campo obligatorio vacío
+						$("#inputEmail").addClass("is-invalid");
+						$("#emailError").text("El correo electrónico es requerido.").show();
+						formularioValido = false;
+					} else if (!formatoCorreo.test(correo)) { // caso - no se cumple con el formato de correo electrónico
+						$("#inputEmail").addClass("is-invalid");
+						$("#emailError").text("Por favor ingrese una dirección de correo electrónico válida.").show();
+						formularioValido = false;
+					}
+
+					if (telefono.trim() !== '' && telefono < 900000000) { // no es obligatorio - se verifica que lo que se ingrese sea de 9 dígitos y que empiece con 9
+						$("#inputTelefono").addClass("is-invalid");
+						formularioValido = false;
+					}
+				
+					if (mensaje.trim() == '') { // caso - campo obligatorio vacío
+						$("#inputMensaje").addClass("is-invalid");
+						formularioValido = false;
+					}
+
+					// Si todos los input fueron validados, entonces depliega un mensaje confirmando envío y limpia el formulario
+					if (formularioValido) {
+						mostrarConfirmaciónContacto();
+						console.log("envío exitoso");
+					}
+				});
+
+
+				// Validaciones en tiempo real, previas al envío, con avisos al usuario de que no está completando el formulario correctamente
+
+				// Nombre y Apellido - mientras el usuario teclea, verifica que no esté ingresando caracteres no permitidos
+				// Los campos no debe estar marcado como inválidos mientras esten vacíos o se esté ingresando texto correctamente
+				$("#inputNombre").on("input", function() {
+					let nombre = $(this).val();
+					if (nombre.trim() !== '' && !formatoNombres.test(nombre)) {
+						$("#inputNombre").addClass("is-invalid");
+						$("#nombreError").text("Por favor ingrese un nombre válido.").show();
+					} else {
+						$("#inputNombre").removeClass("is-invalid");
+						$("#nombreError").hide();
+					}
+				});
+
+				$("#inputApellido").on("input", function() {
+					let apellido = $(this).val();
+					if (apellido.trim() !== '' && !formatoNombres.test(apellido)) {
+						$("#inputApellido").addClass("is-invalid");
+						$("#apellidoError").text("Por favor ingrese un nombre válido.").show();
+					} else {
+						$("#inputApellido").removeClass("is-invalid");
+						$("#apellidoError").hide();
+					}
+				});
+
+
+				// Correo Electrónico 
+				// focusout para que, en caso de que el correo tenga un formato invalido, se le de aviso al usuario apenas pase a otros campos
+				$("#inputEmail").focusout(function() {
+					let correo = $(this).val();
+					if (correo.trim() !== '' && !formatoCorreo.test(correo)) {
+						$("#inputEmail").addClass("is-invalid");
+						$("#emailError").text("Por favor ingrese una dirección de correo electrónico válida.").show();
+					} else {
+						$("#inputEmail").removeClass("is-invalid");
+						$("#emailError").hide();
+					}
+				});
+
+				// focus para que, en caso de haberse marcado en rojo previamente, el campo vuelva a su estado original apenas se haga click sobre él
+				$("#inputEmail").focus(function() {
+					let correo = $(this).val();
+					
+					$("#inputEmail").removeClass("is-invalid");
+					$("#emailError").hide();
+					
+				});
+
+
+				// Teléfono
+				// Mediante el manejo del input se le impide al usuario ingresar caracteres no númericos o más de 9 dígitos
+				$("#inputTelefono").on('input', function() {
+					let maxLength = 9; // Define la longitud máxima permitida
+
+					this.value = this.value.replace(/\D/g, ''); // Eliminada inmediatamente cualquier caracter no numérico
+
+					if (this.value.length > maxLength) {
+						this.value = this.value.slice(0, maxLength); // Limita la longitud del valor al máximo permitido
+					}
+				});
+
+
+				// Al no ser un campo obligatorio, solo se verifica que, de ingresarse un valor, este sea de 9 digitos y que empiece con 9 - si no se cumple, se da aviso apenas pasa a otro campo
+				$("#inputTelefono").focusout(function() {
+					let telefono = $(this).val();
+
+					if (telefono.trim() !== '' && telefono < 900000000) {
+						$("#inputTelefono").addClass("is-invalid");
+					} else {
+						$("#inputTelefono").removeClass("is-invalid");
+					}
+					
+				});
+
+				// focus para que, en caso de haberse marcado en rojo previamente, el campo vuelva a su estado original apenas se haga click sobre él
+				$("#inputTelefono").focus(function() {
+					
+					$("#inputTelefono").removeClass("is-invalid");
+					
+				});
+
+
+				// Mensaje - focus para que, en caso de haberse marcado en rojo previamente, el campo vuelva a su estado original apenas se haga click sobre él
+				$("#inputMensaje").focus(function() {
+					
+					$("#inputMensaje").removeClass("is-invalid");
+					
+				});
+
+            // FIN FORMULARIO DE CONTACTO
+
+
+            // EL TIEMPO
+
+              // Array con días de la semana
+                var diasSemana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+
+				$.get("http://api.weatherapi.com/v1/forecast.json?key=c8171437ad2f4d1e807175311240305&q=Punta%20Arenas&days=10&aqi=no&alerts=no", function(data) { // Se obtiene la API
+					$.each(data.forecast.forecastday, function(i, item) { // Se itera por cada objeto del archivo
+
+                        let icono = item.day.condition.icon;
+
+                        let fecha = new Date(item.date);
+
+                        let diaSemana = diasSemana[fecha.getDay()]; // getDay() nos devuelve el día de la semana en números del 0 al 6 - con ellos accedemos a los elementos correspondientes del array diasSemana
+                        let dia = fecha.getDate() + 1; // Obtenemos el día por separado
+                        let mes = fecha.toLocaleString('es', {month: 'long'}) // Obtenemos el mes, en español
+                        let mesCap = mes.charAt(0).toUpperCase() + mes.slice(1) // Permite tener el mes capitalizado
+                        let anio = fecha.getFullYear();
+
+                      // Testeo de variables
+						console.log(item.date);
+                        console.log(diaSemana + " " + dia  + " de " + mesCap + " de " + anio);
+                        console.log(item.day.mintemp_c);
+                        console.log(item.day.maxtemp_c);
+                        console.log('');
+
+                      // Creación y poblamiento de filas
+                        let filaHTML = '<tr>';
+                        filaHTML += '<td>' + diaSemana + ', ' + dia + ' de ' + mesCap + ' de ' + anio + '</td>';
+                        filaHTML += `<td> <img src="${icono}" alt="condicion"> </td>`;
+                        filaHTML += '<td>' + item.day.mintemp_c + '°C</td>';
+                        filaHTML += '<td>' + item.day.maxtemp_c + '°C</td>';
+                        filaHTML += '<td>' + item.day.daily_chance_of_rain + '% prob.<br>' + item.day.totalprecip_mm + ' mm </td>';
+                        filaHTML += '<td>' + item.day.maxwind_kph + ' km/h </td>';
+                        filaHTML += '</tr>';
+
+                        $('#seccionTiempo tbody').append(filaHTML);
+					});
+				});
+
+        });
+
+    </script>
+</body>
+</html>
