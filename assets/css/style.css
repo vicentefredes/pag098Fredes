@@ -118,7 +118,7 @@ section {
     font-size: 20px;
 }
 
-.container.equipo {
+.container.equipo, .container.locations {
     text-align: center;
     border: 3px solid rgb(68, 27, 27);
     background-color: rgb(161, 100, 100);
@@ -133,7 +133,7 @@ section {
     text-align: center;
 }
 
-.container.equipo h2 {
+.container.equipo h2, .container.locations h2 {
     color: white;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -162,37 +162,21 @@ section {
     margin-bottom: 2%;
 }
 
-.card.servicio {
+.card.location {
     margin: 2%;
-    border: 3px solid rgb(56, 118, 29);
-    background-color: rgb(150, 113, 78);
-    color: white;
+    border: 3px solid rgb(68, 27, 27);
+    background-color: white;
+    color: rgb(68, 27, 27);
+    text-align: left;
 }
 
-.card.servicio h2 {
+.card.location h3 {
     text-align: center;
     margin-top: 3%;
 }
 
-.card.servicio img {
-    width: auto;
-    border-top: 3px solid rgb(56, 118, 29);
-    border-bottom: 3px solid rgb(56, 118, 29);
-}
-
-.card.servicio p {
-    text-align: justify;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-.card.servicio ul {
-    margin-top: 5%;
-    
-}
-
-.card.servicio iframe {
-    border-top: 3px solid rgb(56, 118, 29);
+.card.location iframe {
+    border-top: 3px solid rgb(68, 27, 27);
 }
 
 .is-invalid {
