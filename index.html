@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq/tbE57P28bxCeykDl5pw+H8C4lYyzB8O4w9TQKEPM7WD5ym0" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css">
         
 </head>
@@ -226,6 +226,240 @@
                       </div>
                       <div class="col-md-5 col-sm-10" id="btnCocktail">
                         <button>Cocktails</button>
+                      </div>
+                    </div>
+                    <div class="container meals">
+                        <div class="row justify-content-center">
+                            <div class="col-md-3 d-none d-md-block">
+                                <div class="nav flex-column nav-pills" id="v-pills-tab-md" role="tablist" aria-orientation="vertical">
+                                    <a class="nav-link active" id="v-pills-breakfast-tab" data-toggle="pill" href="#tabBreakfast" role="tab" aria-controls="tabBreakfast" aria-selected="true">Breakfast</a>
+                                    <a class="nav-link" id="v-pills-starter-tab" data-toggle="pill" href="#tabStarter" role="tab" aria-controls="tabStarter" aria-selected="false">Starters</a>
+                                    <a class="nav-link" id="v-pills-beef-tab" data-toggle="pill" href="#tabBeef" role="tab" aria-controls="tabBeef" aria-selected="false">Beef</a>
+                                    <a class="nav-link" id="v-pills-chicken-tab" data-toggle="pill" href="#tabChicken" role="tab" aria-controls="tabChicken" aria-selected="false">Chicken</a>
+                                    <a class="nav-link" id="v-pills-lamb-tab" data-toggle="pill" href="#tabLamb" role="tab" aria-controls="tabLamb" aria-selected="false">Lamb</a>
+                                    <a class="nav-link" id="v-pills-pork-tab" data-toggle="pill" href="#tabPork" role="tab" aria-controls="tabPork" aria-selected="false">Pork</a>
+                                    <a class="nav-link" id="v-pills-seafood-tab" data-toggle="pill" href="#tabSeafood" role="tab" aria-controls="tabSeafood" aria-selected="false">Seafood</a>
+                                    <a class="nav-link" id="v-pills-pasta-tab" data-toggle="pill" href="#tabPasta" role="tab" aria-controls="tabPasta" aria-selected="false">Pasta</a>
+                                    <a class="nav-link" id="v-pills-miscellaneous-tab" data-toggle="pill" href="#tabMiscellaneous" role="tab" aria-controls="tabMiscellaneous" aria-selected="false">Miscellaneous</a>
+                                    <a class="nav-link" id="v-pills-veggie-tab" data-toggle="pill" href="#tabVeggie" role="tab" aria-controls="tabVeggie" aria-selected="false">Veggie</a>
+                                    <a class="nav-link" id="v-pills-sides-tab" data-toggle="pill" href="#tabSides" role="tab" aria-controls="tabSides" aria-selected="false">Sides</a>
+                                    <a class="nav-link" id="v-pills-desserts-tab" data-toggle="pill" href="#tabDesserts" role="tab" aria-controls="tabDesserts" aria-selected="false">Desserts</a>
+                                </div>
+                            </div>
+                            <div class="col-12 d-block d-md-none">
+                              <div class="nav nav-pills" id="v-pills-tab-sm" role="tablist" aria-orientation="vertical">
+                                  <a class="nav-link active" id="v-pills-breakfast-tab" data-toggle="pill" href="#tabBreakfast" role="tab" aria-controls="tabBreakfast" aria-selected="true">Breakfast</a>
+                                  <a class="nav-link" id="v-pills-starter-tab" data-toggle="pill" href="#tabStarter" role="tab" aria-controls="tabStarter" aria-selected="false">Starters</a>
+                                  <a class="nav-link" id="v-pills-beef-tab" data-toggle="pill" href="#tabBeef" role="tab" aria-controls="tabBeef" aria-selected="false">Beef</a>
+                                  <a class="nav-link" id="v-pills-chicken-tab" data-toggle="pill" href="#tabChicken" role="tab" aria-controls="tabChicken" aria-selected="false">Chicken</a>
+                                  <a class="nav-link" id="v-pills-lamb-tab" data-toggle="pill" href="#tabLamb" role="tab" aria-controls="tabLamb" aria-selected="false">Lamb</a>
+                                  <a class="nav-link" id="v-pills-pork-tab" data-toggle="pill" href="#tabPork" role="tab" aria-controls="tabPork" aria-selected="false">Pork</a>
+                                  <a class="nav-link" id="v-pills-seafood-tab" data-toggle="pill" href="#tabSeafood" role="tab" aria-controls="tabSeafood" aria-selected="false">Seafood</a>
+                                  <a class="nav-link" id="v-pills-pasta-tab" data-toggle="pill" href="#tabPasta" role="tab" aria-controls="tabPasta" aria-selected="false">Pasta</a>
+                                  <a class="nav-link" id="v-pills-miscellaneous-tab" data-toggle="pill" href="#tabMiscellaneous" role="tab" aria-controls="tabMiscellaneous" aria-selected="false">Miscellaneous</a>
+                                  <a class="nav-link" id="v-pills-veggie-tab" data-toggle="pill" href="#tabVeggie" role="tab" aria-controls="tabVeggie" aria-selected="false">Veggie</a>
+                                  <a class="nav-link" id="v-pills-sides-tab" data-toggle="pill" href="#tabSides" role="tab" aria-controls="tabSides" aria-selected="false">Sides</a>
+                                  <a class="nav-link" id="v-pills-desserts-tab" data-toggle="pill" href="#tabDesserts" role="tab" aria-controls="tabDesserts" aria-selected="false">Desserts</a>
+                              </div>
+                          </div>
+                            <div class="col-md-9 d-none d-md-block">
+                                <div class="tab-content" id="v-pills-tabContent">
+                                    <div class="tab-pane fade show active" id="tabBreakfast" role="tabpanel" aria-labelledby="v-pills-breakfast-tab">
+                                        <div class="row justify-content-center">
+                                            <div class="col">
+                                                <div class="container-fluid" id="breakfast">
+                                                    <h3>Breakfast</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tabStarter" role="tabpanel" aria-labelledby="v-pills-starter-tab">
+                                        <div class="row justify-content-center">
+                                            <div class="col">
+                                                <div class="container-fluid" id="starter">
+                                                    <h3>Starters</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tabBeef" role="tabpanel" aria-labelledby="v-pills-beef-tab">
+                                        <div class="row justify-content-center">
+                                            <div class="col">
+                                                <div class="container-fluid" id="beef">
+                                                    <h3>Beef</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tabChicken" role="tabpanel" aria-labelledby="v-pills-chicken-tab">
+                                        <div class="row justify-content-center">
+                                            <div class="col">
+                                                <div class="container-fluid" id="chicken">
+                                                    <h3>Chicken</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tabLamb" role="tabpanel" aria-labelledby="v-pills-lamb-tab">
+                                        <div class="row justify-content-center">
+                                            <div class="col">
+                                                <div class="container-fluid" id="lamb">
+                                                    <h3>Lamb</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tabPork" role="tabpanel" aria-labelledby="v-pills-pork-tab">
+                                        <div class="row justify-content-center">
+                                            <div class="col">
+                                                <div class="container-fluid" id="pork">
+                                                    <h3>Pork</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tabSeafood" role="tabpanel" aria-labelledby="v-pills-seafood-tab">
+                                        <div class="row justify-content-center">
+                                            <div class="col">
+                                                <div class="container-fluid" id="seafood">
+                                                    <h3>Seafood</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tabPasta" role="tabpanel" aria-labelledby="v-pills-pasta-tab">
+                                        <div class="row justify-content-center">
+                                            <div class="col">
+                                                <div class="container-fluid" id="pasta">
+                                                    <h3>Pasta</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tabMiscellaneous" role="tabpanel" aria-labelledby="v-pills-miscellaneous-tab">
+                                        <div class="row justify-content-center">
+                                            <div class="col">
+                                                <div class="container-fluid" id="miscellaneous">
+                                                    <h3>Miscellaneous</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tabVeggie" role="tabpanel" aria-labelledby="v-pills-veggie-tab">
+                                        <div class="row justify-content-center">
+                                            <div class="col">
+                                                <div class="container-fluid" id="veggie">
+                                                    <h3>Veggie</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tabSides" role="tabpanel" aria-labelledby="v-pills-sides-tab">
+                                        <div class="row justify-content-center">
+                                            <div class="col">
+                                                <div class="container-fluid" id="sides">
+                                                    <h3>Sides</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tabDesserts" role="tabpanel" aria-labelledby="v-pills-desserts-tab">
+                                        <div class="row justify-content-center">
+                                            <div class="col">
+                                                <div class="container-fluid" id="desserts">
+                                                    <h3>Desserts</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                      
+                    <div class="container cocktails">
+                      <div class="row justify-content-center">
+                        <div class="col-12">
+                          <div class="container-fluid" id="ordinary">
+                            <h3>Ordinary Drinks</h3> 
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row justify-content-center">
+                        <div class="col-12">
+                          <div class="container-fluid" id="starter">
+                            <h3>Starters</h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row justify-content-center">
+                        <div class="col-12">
+                          <div class="container-fluid" id="beef">
+                            <h3>Beef</h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row justify-content-center">
+                        <div class="col-12">
+                          <div class="container-fluid" id="chicken">
+                            <h3>Chicken</h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row justify-content-center">
+                        <div class="col-12">
+                          <div class="container-fluid" id="lamb">
+                            <h3>Lamb</h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row justify-content-center">
+                        <div class="col-12">
+                          <div class="container-fluid" id="pork">
+                            <h3>Pork</h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row justify-content-center">
+                        <div class="col-12">
+                          <div class="container-fluid" id="seafood">
+                            <h3>Seafood</h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row justify-content-center">
+                        <div class="col-12">
+                          <div class="container-fluid" id="pasta">
+                            <h3>Pastas</h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row justify-content-center">
+                        <div class="col-12">
+                          <div class="container-fluid" id="miscellaneous">
+                            <h3>Miscellaneous</h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row justify-content-center">
+                        <div class="col-12">
+                          <div class="container-fluid" id="veggie">
+                            <h3>Veggie</h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row justify-content-center">
+                        <div class="col-12">
+                          <div class="container-fluid" id="side">
+                            <h3>Sides</h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row justify-content-center">
+                        <div class="col-12">
+                          <div class="container-fluid" id="dessert">
+                            <h3>Desserts</h3>
+                          </div>
+                        </div>
                       </div>
                     </div>
                 </section>
