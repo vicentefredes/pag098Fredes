@@ -179,12 +179,12 @@ section {
     border-top: 3px solid rgb(68, 27, 27);
 }
 
-#btnMeal, #btnCocktail {
+#colbtnmeal, #colbtncocktail {
     text-align: center;
     margin-bottom: 5%;
 }
 
-#btnMeal button, #btnCocktail button {
+#btnMeal, #btnCocktail {
     font-size: 30px;
     font-family: Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
@@ -195,12 +195,12 @@ section {
 }
 
 #v-pills-tab-md {
-    background-color: rgb(161, 100, 100);
     border-top: 2px solid rgb(68, 27, 27);
 }
 
-#v-pills-tab-md .nav-link {
+#v-pills-tab-md .nav-link{
     color: white;
+    background-color: rgb(161, 100, 100);
     font-family: Tahoma, Geneva, Verdana, sans-serif;
     font-size: 18px;
     text-align: center;
@@ -209,7 +209,7 @@ section {
     border-bottom: 2px solid rgb(68, 27, 27);
 }
 
-#v-pills-tab-md .nav-link.active {
+#v-pills-tab-md .nav-link.active, #v-pills-tab-sm .nav-link.active {
     color: rgb(68, 27, 27);
     background-color: white;
     font-family: Tahoma, Geneva, Verdana, sans-serif;
@@ -221,6 +221,18 @@ section {
     font-weight: bold;
 }
 
+#v-pills-tab-sm {
+    justify-content: center;
+}
+
+#v-pills-tab-sm .nav-link {
+    color: white;
+    background-color: rgb(161, 100, 100);
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    border: 2px solid rgb(68, 27, 27);
+}
 
 .is-invalid {
     background-color: rgb(255, 212, 215) !important;

@@ -217,18 +217,18 @@
 
             <article id="menu" class="panel">
                 <header>
-                    <h1 id>Our Menu</h1>
+                    <h1>Our Menu</h1>
                 </header>
                 <section id="secMenu">
                     <div class="row justify-content-center">
-                      <div class="col-md-5 col-sm-10" id="btnMeal">
-                        <button>Meals</button>
+                      <div class="col-md-5 col-sm-10" id="colbtnmeal">
+                        <button id="btnMeal">Meals</button>
                       </div>
-                      <div class="col-md-5 col-sm-10" id="btnCocktail">
-                        <button>Cocktails</button>
+                      <div class="col-md-5 col-sm-10" id="colbtncocktail">
+                        <button id="btnCocktail">Cocktails</button>
                       </div>
                     </div>
-                    <div class="container meals">
+                    <div class="container meals" id="menumeals">
                         <div class="row justify-content-center">
                             <div class="col-md-3 d-none d-md-block">
                                 <div class="nav flex-column nav-pills" id="v-pills-tab-md" role="tablist" aria-orientation="vertical">
@@ -374,94 +374,159 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
                     </div>
                       
-                    <div class="container cocktails">
+                    <div class="container cocktails" id="menucocktails">
                       <div class="row justify-content-center">
-                        <div class="col-12">
-                          <div class="container-fluid" id="ordinary">
-                            <h3>Ordinary Drinks</h3> 
+                          <!-- Sidebar vertical en pantallas grandes -->
+                          <div class="col-md-3 d-none d-md-block">
+                              <div class="nav flex-column nav-pills" id="v-pills-tab-md" role="tablist" aria-orientation="vertical">
+                                  <a class="nav-link active" id="v-pills-ordinary-drinks-tab" data-toggle="pill" href="#tabOrdinaryDrinks" role="tab" aria-controls="tabOrdinaryDrinks" aria-selected="true">Ordinary Drinks</a>
+                                  <a class="nav-link" id="v-pills-cocktail-tab" data-toggle="pill" href="#tabCocktail" role="tab" aria-controls="tabCocktail" aria-selected="false">Cocktail</a>
+                                  <a class="nav-link" id="v-pills-shake-tab" data-toggle="pill" href="#tabShake" role="tab" aria-controls="tabShake" aria-selected="false">Shake</a>
+                                  <a class="nav-link" id="v-pills-shot-tab" data-toggle="pill" href="#tabShot" role="tab" aria-controls="tabShot" aria-selected="false">Shot</a>
+                                  <a class="nav-link" id="v-pills-beer-tab" data-toggle="pill" href="#tabBeer" role="tab" aria-controls="tabBeer" aria-selected="false">Beer</a>
+                                  <a class="nav-link" id="v-pills-homemade-liqueur-tab" data-toggle="pill" href="#tabHomemadeLiqueur" role="tab" aria-controls="tabHomemadeLiqueur" aria-selected="false">Homemade Liqueur</a>
+                                  <a class="nav-link" id="v-pills-punch-tab" data-toggle="pill" href="#tabPunch" role="tab" aria-controls="tabPunch" aria-selected="false">Punch / Party Drinks</a>
+                                  <a class="nav-link" id="v-pills-soft-drinks-tab" data-toggle="pill" href="#tabSoftDrinks" role="tab" aria-controls="tabSoftDrinks" aria-selected="false">Soft Drinks</a>
+                                  <a class="nav-link" id="v-pills-coffee-tea-tab" data-toggle="pill" href="#tabCoffeeTea" role="tab" aria-controls="tabCoffeeTea" aria-selected="false">Coffee and Tea</a>
+                                  <a class="nav-link" id="v-pills-cocoa-tab" data-toggle="pill" href="#tabCocoa" role="tab" aria-controls="tabCocoa" aria-selected="false">Cocoa</a>
+                                  <a class="nav-link" id="v-pills-others-tab" data-toggle="pill" href="#tabOthers" role="tab" aria-controls="tabOthers" aria-selected="false">Others</a>
+                              </div>
                           </div>
-                        </div>
-                      </div>
-                      <div class="row justify-content-center">
-                        <div class="col-12">
-                          <div class="container-fluid" id="starter">
-                            <h3>Starters</h3>
+                          <!-- Contenido de las pestañas -->
+                          <div class="col-12 d-block d-md-none">
+                              <div class="nav nav-pills" id="v-pills-tab-sm" role="tablist" aria-orientation="vertical">
+                                  <a class="nav-link active" id="v-pills-ordinary-drinks-tab" data-toggle="pill" href="#tabOrdinaryDrinks" role="tab" aria-controls="tabOrdinaryDrinks" aria-selected="true">Ordinary Drinks</a>
+                                  <a class="nav-link" id="v-pills-cocktail-tab" data-toggle="pill" href="#tabCocktail" role="tab" aria-controls="tabCocktail" aria-selected="false">Cocktail</a>
+                                  <a class="nav-link" id="v-pills-shake-tab" data-toggle="pill" href="#tabShake" role="tab" aria-controls="tabShake" aria-selected="false">Shake</a>
+                                  <a class="nav-link" id="v-pills-shot-tab" data-toggle="pill" href="#tabShot" role="tab" aria-controls="tabShot" aria-selected="false">Shot</a>
+                                  <a class="nav-link" id="v-pills-beer-tab" data-toggle="pill" href="#tabBeer" role="tab" aria-controls="tabBeer" aria-selected="false">Beer</a>
+                                  <a class="nav-link" id="v-pills-homemade-liqueur-tab" data-toggle="pill" href="#tabHomemadeLiqueur" role="tab" aria-controls="tabHomemadeLiqueur" aria-selected="false">Homemade Liqueur</a>
+                                  <a class="nav-link" id="v-pills-punch-tab" data-toggle="pill" href="#tabPunch" role="tab" aria-controls="tabPunch" aria-selected="false">Punch / Party Drinks</a>
+                                  <a class="nav-link" id="v-pills-soft-drinks-tab" data-toggle="pill" href="#tabSoftDrinks" role="tab" aria-controls="tabSoftDrinks" aria-selected="false">Soft Drinks</a>
+                                  <a class="nav-link" id="v-pills-coffee-tea-tab" data-toggle="pill" href="#tabCoffeeTea" role="tab" aria-controls="tabCoffeeTea" aria-selected="false">Coffee and Tea</a>
+                                  <a class="nav-link" id="v-pills-cocoa-tab" data-toggle="pill" href="#tabCocoa" role="tab" aria-controls="tabCocoa" aria-selected="false">Cocoa</a>
+                                  <a class="nav-link" id="v-pills-others-tab" data-toggle="pill" href="#tabOthers" role="tab" aria-controls="tabOthers" aria-selected="false">Others</a>
+                              </div>
                           </div>
-                        </div>
-                      </div>
-                      <div class="row justify-content-center">
-                        <div class="col-12">
-                          <div class="container-fluid" id="beef">
-                            <h3>Beef</h3>
+                          <div class="col-md-9 d-none d-md-block">
+                              <div class="tab-content" id="v-pills-tabContent-cocktails">
+                                  <div class="tab-pane fade show active" id="tabOrdinaryDrinks" role="tabpanel" aria-labelledby="v-pills-ordinary-drinks-tab">
+                                      <div class="row justify-content-center">
+                                          <div class="col">
+                                              <div class="container-fluid" id="ordinaryDrinks">
+                                                  <h3>Ordinary Drinks</h3>
+                                                  <!-- Contenido de Ordinary Drinks -->
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="tab-pane fade" id="tabCocktail" role="tabpanel" aria-labelledby="v-pills-cocktail-tab">
+                                      <div class="row justify-content-center">
+                                          <div class="col">
+                                              <div class="container-fluid" id="cocktail">
+                                                  <h3>Cocktail</h3>
+                                                  <!-- Contenido de Cocktail -->
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="tab-pane fade" id="tabShake" role="tabpanel" aria-labelledby="v-pills-shake-tab">
+                                      <div class="row justify-content-center">
+                                          <div class="col">
+                                              <div class="container-fluid" id="shake">
+                                                  <h3>Shake</h3>
+                                                  <!-- Contenido de Shake -->
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="tab-pane fade" id="tabShot" role="tabpanel" aria-labelledby="v-pills-shot-tab">
+                                      <div class="row justify-content-center">
+                                          <div class="col">
+                                              <div class="container-fluid" id="shot">
+                                                  <h3>Shot</h3>
+                                                  <!-- Contenido de Shot -->
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="tab-pane fade" id="tabBeer" role="tabpanel" aria-labelledby="v-pills-beer-tab">
+                                      <div class="row justify-content-center">
+                                          <div class="col">
+                                              <div class="container-fluid" id="beer">
+                                                  <h3>Beer</h3>
+                                                  <!-- Contenido de Beer -->
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="tab-pane fade" id="tabHomemadeLiqueur" role="tabpanel" aria-labelledby="v-pills-homemade-liqueur-tab">
+                                      <div class="row justify-content-center">
+                                          <div class="col">
+                                              <div class="container-fluid" id="homemadeLiqueur">
+                                                  <h3>Homemade Liqueur</h3>
+                                                  <!-- Contenido de Homemade Liqueur -->
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="tab-pane fade" id="tabPunch" role="tabpanel" aria-labelledby="v-pills-punch-tab">
+                                      <div class="row justify-content-center">
+                                          <div class="col">
+                                              <div class="container-fluid" id="punch">
+                                                  <h3>Punch / Party Drinks</h3>
+                                                  <!-- CSontenido de Punch / Party Drinks -->
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="tab-pane fade" id="tabSoftDrinks" role="tabpanel" aria-labelledby="v-pills-soft-drinks-tab">
+                                    <div class="row justify-content-center">
+                                      <div class="col">
+                                          <div class="container-fluid" id="softDrinks">
+                                            <h3>Soft Drinks</h3>
+                                            <!-- Contenido de Soft Drinks -->
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="tab-pane fade" id="tabCoffeeTea" role="tabpanel" aria-labelledby="v-pills-coffee-tea-tab">
+                                      <div class="row justify-content-center">
+                                          <div class="col">
+                                              <div class="container-fluid" id="coffeeTea">
+                                                  <h3>Coffee and Tea</h3>
+                                                  <!-- Contenido de Coffee and Tea -->
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="tab-pane fade" id="tabCocoa" role="tabpanel" aria-labelledby="v-pills-cocoa-tab">
+                                      <div class="row justify-content-center">
+                                          <div class="col">
+                                              <div class="container-fluid" id="cocoa">
+                                                  <h3>Cocoa</h3>
+                                                  <!-- Contenido de Cocoa -->
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="tab-pane fade" id="tabOthers" role="tabpanel" aria-labelledby="v-pills-others-tab">
+                                      <div class="row justify-content-center">
+                                          <div class="col">
+                                              <div class="container-fluid" id="others">
+                                                  <h3>Others</h3>
+                                                  <!-- Contenido de Others -->
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
                           </div>
-                        </div>
                       </div>
-                      <div class="row justify-content-center">
-                        <div class="col-12">
-                          <div class="container-fluid" id="chicken">
-                            <h3>Chicken</h3>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row justify-content-center">
-                        <div class="col-12">
-                          <div class="container-fluid" id="lamb">
-                            <h3>Lamb</h3>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row justify-content-center">
-                        <div class="col-12">
-                          <div class="container-fluid" id="pork">
-                            <h3>Pork</h3>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row justify-content-center">
-                        <div class="col-12">
-                          <div class="container-fluid" id="seafood">
-                            <h3>Seafood</h3>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row justify-content-center">
-                        <div class="col-12">
-                          <div class="container-fluid" id="pasta">
-                            <h3>Pastas</h3>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row justify-content-center">
-                        <div class="col-12">
-                          <div class="container-fluid" id="miscellaneous">
-                            <h3>Miscellaneous</h3>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row justify-content-center">
-                        <div class="col-12">
-                          <div class="container-fluid" id="veggie">
-                            <h3>Veggie</h3>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row justify-content-center">
-                        <div class="col-12">
-                          <div class="container-fluid" id="side">
-                            <h3>Sides</h3>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row justify-content-center">
-                        <div class="col-12">
-                          <div class="container-fluid" id="dessert">
-                            <h3>Desserts</h3>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    </div> 
                 </section>
             </article>
 
@@ -507,7 +572,7 @@
                         <div class="form-row justify-content-center">
                             <div class="form-group col-lg-8 col-md-10">
                             <label for="exampleFormControlTextarea1">Your Message *</label>
-                            <textarea class="form-control" id="inputMensaje" rows="6"></textarea>
+                            <textarea class="form-control" id="inputMensaje" rows="6" placeholder="Your message here..."></textarea>
                             <div class="invalid-feedback" id="mensajeError">Your message can't be empty!</div>
                             </div>
                         </div>
@@ -582,11 +647,31 @@
             // FIN FUNCIONAMIENTO GENERAL
 
 
+            // MENU
+
+              // Ocultar el contenedor de cocktails al cargar la página
+              $("#menucocktails").hide();
+
+              // Manejar el click en el botón Meals
+              $("#btnMeal").click(function() {
+                  $("#menucocktails").hide();
+                  $("#menumeals").show();
+              });
+
+              // Manejar el click en el botón Cocktails
+              $("#btnCocktail").click(function() {
+                  $("#menumeals").hide();
+                  $("#menucocktails").show();
+              });
+
+            // FIN MENU
+
+
             // FORMULARIO DE CONTACTO
 
-			    // Variables con el formato que deben cumplir los campos de nombre, apellido y correo electrónico
-			    var formatoNombres = /^[a-zA-Z\u00C0-\u017F\s']+$/;
-			    var formatoCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              // Variables con el formato que deben cumplir los campos de nombre, apellido y correo electrónico
+              var formatoNombres = /^[a-zA-Z\u00C0-\u017F\s']+$/;
+              var formatoCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
                 // Función que despliega un alert informando que el mensaje en el formulario de contacto se ha enviado (sin validación)
                 function mostrarConfirmaciónContacto() {
@@ -615,143 +700,143 @@
                     console.log(telefono);
                     console.log(mensaje);
 
-					if (nombre.trim() == '') { // caso - campo obligatorio vacío
-						$("#inputNombre").addClass("is-invalid");
-						$("#nombreError").text("El nombre es requerido.").show();
-						formularioValido = false;
-					} else if (!formatoNombres.test(nombre)) { // caso - usuario puso números y/o caracteres especiales
-						$("#inputNombre").addClass("is-invalid");
-						$("#nombreError").text("Por favor ingrese un nombre válido.").show();
-						formularioValido = false;
-					}
+                    if (nombre.trim() == '') { // caso - campo obligatorio vacío
+                      $("#inputNombre").addClass("is-invalid");
+                      $("#nombreError").text("El nombre es requerido.").show();
+                      formularioValido = false;
+                    } else if (!formatoNombres.test(nombre)) { // caso - usuario puso números y/o caracteres especiales
+                      $("#inputNombre").addClass("is-invalid");
+                      $("#nombreError").text("Por favor ingrese un nombre válido.").show();
+                      formularioValido = false;
+                    }
 
-					if (apellido.trim() == '') { // caso - campo obligatorio vacío
-						$("#inputApellido").addClass("is-invalid"); 
-						$("#apellidoError").text("El apellido es requerido.").show();
-						formularioValido = false;
-					} else if (!formatoNombres.test(apellido)) { // caso - usuario puso números y/o caracteres especiales
-						$("#inputApellido").addClass("is-invalid");
-						$("#apellidoError").text("Por favor ingrese un apellido válido.").show();
-						formularioValido = false;
-					}
+                    if (apellido.trim() == '') { // caso - campo obligatorio vacío
+                      $("#inputApellido").addClass("is-invalid"); 
+                      $("#apellidoError").text("El apellido es requerido.").show();
+                      formularioValido = false;
+                    } else if (!formatoNombres.test(apellido)) { // caso - usuario puso números y/o caracteres especiales
+                      $("#inputApellido").addClass("is-invalid");
+                      $("#apellidoError").text("Por favor ingrese un apellido válido.").show();
+                      formularioValido = false;
+                    }
 
-					if (correo.trim() == '') { // caso - campo obligatorio vacío
-						$("#inputEmail").addClass("is-invalid");
-						$("#emailError").text("El correo electrónico es requerido.").show();
-						formularioValido = false;
-					} else if (!formatoCorreo.test(correo)) { // caso - no se cumple con el formato de correo electrónico
-						$("#inputEmail").addClass("is-invalid");
-						$("#emailError").text("Por favor ingrese una dirección de correo electrónico válida.").show();
-						formularioValido = false;
-					}
+                    if (correo.trim() == '') { // caso - campo obligatorio vacío
+                      $("#inputEmail").addClass("is-invalid");
+                      $("#emailError").text("El correo electrónico es requerido.").show();
+                      formularioValido = false;
+                    } else if (!formatoCorreo.test(correo)) { // caso - no se cumple con el formato de correo electrónico
+                      $("#inputEmail").addClass("is-invalid");
+                      $("#emailError").text("Por favor ingrese una dirección de correo electrónico válida.").show();
+                      formularioValido = false;
+                    }
 
-					if (telefono.trim() !== '' && telefono < 900000000) { // no es obligatorio - se verifica que lo que se ingrese sea de 9 dígitos y que empiece con 9
-						$("#inputTelefono").addClass("is-invalid");
-						formularioValido = false;
-					}
-				
-					if (mensaje.trim() == '') { // caso - campo obligatorio vacío
-						$("#inputMensaje").addClass("is-invalid");
-						formularioValido = false;
-					}
+                    if (telefono.trim() !== '' && telefono < 900000000) { // no es obligatorio - se verifica que lo que se ingrese sea de 9 dígitos y que empiece con 9
+                      $("#inputTelefono").addClass("is-invalid");
+                      formularioValido = false;
+                    }
+                  
+                    if (mensaje.trim() == '') { // caso - campo obligatorio vacío
+                      $("#inputMensaje").addClass("is-invalid");
+                      formularioValido = false;
+                    }
 
-					// Si todos los input fueron validados, entonces depliega un mensaje confirmando envío y limpia el formulario
-					if (formularioValido) {
-						mostrarConfirmaciónContacto();
-						console.log("envío exitoso");
-					}
-				});
-
-
-				// Validaciones en tiempo real, previas al envío, con avisos al usuario de que no está completando el formulario correctamente
-
-				// Nombre y Apellido - mientras el usuario teclea, verifica que no esté ingresando caracteres no permitidos
-				// Los campos no debe estar marcado como inválidos mientras esten vacíos o se esté ingresando texto correctamente
-				$("#inputNombre").on("input", function() {
-					let nombre = $(this).val();
-					if (nombre.trim() !== '' && !formatoNombres.test(nombre)) {
-						$("#inputNombre").addClass("is-invalid");
-						$("#nombreError").text("Por favor ingrese un nombre válido.").show();
-					} else {
-						$("#inputNombre").removeClass("is-invalid");
-						$("#nombreError").hide();
-					}
-				});
-
-				$("#inputApellido").on("input", function() {
-					let apellido = $(this).val();
-					if (apellido.trim() !== '' && !formatoNombres.test(apellido)) {
-						$("#inputApellido").addClass("is-invalid");
-						$("#apellidoError").text("Por favor ingrese un nombre válido.").show();
-					} else {
-						$("#inputApellido").removeClass("is-invalid");
-						$("#apellidoError").hide();
-					}
-				});
+                    // Si todos los input fueron validados, entonces depliega un mensaje confirmando envío y limpia el formulario
+                    if (formularioValido) {
+                      mostrarConfirmaciónContacto();
+                      console.log("envío exitoso");
+                    }
+                  });
 
 
-				// Correo Electrónico 
-				// focusout para que, en caso de que el correo tenga un formato invalido, se le de aviso al usuario apenas pase a otros campos
-				$("#inputEmail").focusout(function() {
-					let correo = $(this).val();
-					if (correo.trim() !== '' && !formatoCorreo.test(correo)) {
-						$("#inputEmail").addClass("is-invalid");
-						$("#emailError").text("Por favor ingrese una dirección de correo electrónico válida.").show();
-					} else {
-						$("#inputEmail").removeClass("is-invalid");
-						$("#emailError").hide();
-					}
-				});
+                  // Validaciones en tiempo real, previas al envío, con avisos al usuario de que no está completando el formulario correctamente
 
-				// focus para que, en caso de haberse marcado en rojo previamente, el campo vuelva a su estado original apenas se haga click sobre él
-				$("#inputEmail").focus(function() {
-					let correo = $(this).val();
-					
-					$("#inputEmail").removeClass("is-invalid");
-					$("#emailError").hide();
-					
-				});
+                  // Nombre y Apellido - mientras el usuario teclea, verifica que no esté ingresando caracteres no permitidos
+                  // Los campos no debe estar marcado como inválidos mientras esten vacíos o se esté ingresando texto correctamente
+                  $("#inputNombre").on("input", function() {
+                    let nombre = $(this).val();
+                    if (nombre.trim() !== '' && !formatoNombres.test(nombre)) {
+                      $("#inputNombre").addClass("is-invalid");
+                      $("#nombreError").text("Por favor ingrese un nombre válido.").show();
+                    } else {
+                      $("#inputNombre").removeClass("is-invalid");
+                      $("#nombreError").hide();
+                    }
+                  });
 
-
-				// Teléfono
-				// Mediante el manejo del input se le impide al usuario ingresar caracteres no númericos o más de 9 dígitos
-				$("#inputTelefono").on('input', function() {
-					let maxLength = 9; // Define la longitud máxima permitida
-
-					this.value = this.value.replace(/\D/g, ''); // Eliminada inmediatamente cualquier caracter no numérico
-
-					if (this.value.length > maxLength) {
-						this.value = this.value.slice(0, maxLength); // Limita la longitud del valor al máximo permitido
-					}
-				});
+                  $("#inputApellido").on("input", function() {
+                    let apellido = $(this).val();
+                    if (apellido.trim() !== '' && !formatoNombres.test(apellido)) {
+                      $("#inputApellido").addClass("is-invalid");
+                      $("#apellidoError").text("Por favor ingrese un nombre válido.").show();
+                    } else {
+                      $("#inputApellido").removeClass("is-invalid");
+                      $("#apellidoError").hide();
+                    }
+                  });
 
 
-				// Al no ser un campo obligatorio, solo se verifica que, de ingresarse un valor, este sea de 9 digitos y que empiece con 9 - si no se cumple, se da aviso apenas pasa a otro campo
-				$("#inputTelefono").focusout(function() {
-					let telefono = $(this).val();
+                  // Correo Electrónico 
+                  // focusout para que, en caso de que el correo tenga un formato invalido, se le de aviso al usuario apenas pase a otros campos
+                  $("#inputEmail").focusout(function() {
+                    let correo = $(this).val();
+                    if (correo.trim() !== '' && !formatoCorreo.test(correo)) {
+                      $("#inputEmail").addClass("is-invalid");
+                      $("#emailError").text("Por favor ingrese una dirección de correo electrónico válida.").show();
+                    } else {
+                      $("#inputEmail").removeClass("is-invalid");
+                      $("#emailError").hide();
+                    }
+                  });
 
-					if (telefono.trim() !== '' && telefono < 900000000) {
-						$("#inputTelefono").addClass("is-invalid");
-					} else {
-						$("#inputTelefono").removeClass("is-invalid");
-					}
-					
-				});
-
-				// focus para que, en caso de haberse marcado en rojo previamente, el campo vuelva a su estado original apenas se haga click sobre él
-				$("#inputTelefono").focus(function() {
-					
-					$("#inputTelefono").removeClass("is-invalid");
-					
-				});
+                  // focus para que, en caso de haberse marcado en rojo previamente, el campo vuelva a su estado original apenas se haga click sobre él
+                  $("#inputEmail").focus(function() {
+                    let correo = $(this).val();
+                    
+                    $("#inputEmail").removeClass("is-invalid");
+                    $("#emailError").hide();
+                    
+                  });
 
 
-				// Mensaje - focus para que, en caso de haberse marcado en rojo previamente, el campo vuelva a su estado original apenas se haga click sobre él
-				$("#inputMensaje").focus(function() {
-					
-					$("#inputMensaje").removeClass("is-invalid");
-					
-				});
+                  // Teléfono
+                  // Mediante el manejo del input se le impide al usuario ingresar caracteres no númericos o más de 9 dígitos
+                  $("#inputTelefono").on('input', function() {
+                    let maxLength = 9; // Define la longitud máxima permitida
+
+                    this.value = this.value.replace(/\D/g, ''); // Eliminada inmediatamente cualquier caracter no numérico
+
+                    if (this.value.length > maxLength) {
+                      this.value = this.value.slice(0, maxLength); // Limita la longitud del valor al máximo permitido
+                    }
+                  });
+
+
+                  // Al no ser un campo obligatorio, solo se verifica que, de ingresarse un valor, este sea de 9 digitos y que empiece con 9 - si no se cumple, se da aviso apenas pasa a otro campo
+                  $("#inputTelefono").focusout(function() {
+                    let telefono = $(this).val();
+
+                    if (telefono.trim() !== '' && telefono < 900000000) {
+                      $("#inputTelefono").addClass("is-invalid");
+                    } else {
+                      $("#inputTelefono").removeClass("is-invalid");
+                    }
+                    
+                  });
+
+                  // focus para que, en caso de haberse marcado en rojo previamente, el campo vuelva a su estado original apenas se haga click sobre él
+                  $("#inputTelefono").focus(function() {
+                    
+                    $("#inputTelefono").removeClass("is-invalid");
+                    
+                  });
+
+
+                  // Mensaje - focus para que, en caso de haberse marcado en rojo previamente, el campo vuelva a su estado original apenas se haga click sobre él
+                  $("#inputMensaje").focus(function() {
+                    
+                    $("#inputMensaje").removeClass("is-invalid");
+                    
+                  });
 
             // FIN FORMULARIO DE CONTACTO
 
