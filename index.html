@@ -230,7 +230,7 @@
                     <div class="container meals" id="menumeals">
                         <div class="row justify-content-center">
                             <div class="col-md-3 d-none d-md-block">
-                                <div class="nav flex-column nav-pills" id="v-pills-tab-md" role="tablist" aria-orientation="vertical">
+                                <div class="nav flex-column nav-pills sticky-nav" id="v-pills-tab-md" role="tablist" aria-orientation="vertical">
                                     <a class="nav-link active" id="v-pills-breakfast-tab" data-toggle="pill" href="#tabBreakfast" role="tab" aria-controls="tabBreakfast" aria-selected="true">Breakfast</a>
                                     <a class="nav-link" id="v-pills-starter-tab" data-toggle="pill" href="#tabStarter" role="tab" aria-controls="tabStarter" aria-selected="false">Starters</a>
                                     <a class="nav-link" id="v-pills-beef-tab" data-toggle="pill" href="#tabBeef" role="tab" aria-controls="tabBeef" aria-selected="false">Beef</a>
@@ -262,7 +262,7 @@
                               </div>
                           </div>
                           <div class="col-md-9 d-md-block">
-                            <div class="tab-content" id="v-pills-tabContent">
+                            <div class="tab-content" id="v-pills-tabContent-meals">
                                 <div class="tab-pane fade show active" id="tabBreakfast" role="tabpanel" aria-labelledby="v-pills-breakfast-tab">
                                     <h3>Breakfast</h3>
                                     <div class="row justify-content-center" id="breakfast">
@@ -366,67 +366,56 @@
                                 <div class="tab-pane fade show active" id="tabOrdinaryDrinks" role="tabpanel" aria-labelledby="v-pills-ordinary-drinks-tab">
                                     <h3>Ordinary Drinks</h3>
                                     <div class="row justify-content-center" id="ordinaryDrinks">
-                                        <!-- Contenido de Ordinary Drinks -->
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="tabCocktail" role="tabpanel" aria-labelledby="v-pills-cocktail-tab">
                                     <h3>Cocktail</h3>
                                     <div class="row justify-content-center" id="cocktail">
-                                        <!-- Contenido de Cocktail -->
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="tabShake" role="tabpanel" aria-labelledby="v-pills-shake-tab">
                                     <h3>Shake</h3>
                                     <div class="row justify-content-center" id="shake">
-                                        <!-- Contenido de Shake -->
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="tabShot" role="tabpanel" aria-labelledby="v-pills-shot-tab">
                                     <h3>Shot</h3>
                                     <div class="row justify-content-center" id="shot">
-                                        <!-- Contenido de Shot -->
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="tabBeer" role="tabpanel" aria-labelledby="v-pills-beer-tab">
                                     <h3>Beer</h3>
                                     <div class="row justify-content-center" id="beer">
-                                        <!-- Contenido de Beer -->
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="tabHomemadeLiqueur" role="tabpanel" aria-labelledby="v-pills-homemade-liqueur-tab">
                                     <h3>Homemade Liqueur</h3>
                                     <div class="row justify-content-center" id="homemadeLiqueur">
-                                        <!-- Contenido de Homemade Liqueur -->
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="tabPunch" role="tabpanel" aria-labelledby="v-pills-punch-tab">
                                     <h3>Party Drinks</h3>
                                     <div class="row justify-content-center" id="party">
-                                        <!-- Contenido de Punch / Party Drinks -->
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="tabSoftDrinks" role="tabpanel" aria-labelledby="v-pills-soft-drinks-tab">
                                     <h3>Soft Drinks</h3>
                                     <div class="row justify-content-center" id="softDrinks">
-                                        <!-- Contenido de Soft Drinks -->
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="tabCoffeeTea" role="tabpanel" aria-labelledby="v-pills-coffee-tea-tab">
                                     <h3>Coffee and Tea</h3>
                                     <div class="row justify-content-center" id="coffeeTea">
-                                        <!-- Contenido de Coffee and Tea -->
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="tabCocoa" role="tabpanel" aria-labelledby="v-pills-cocoa-tab">
                                     <h3>Cocoa</h3>
                                     <div class="row justify-content-center" id="cocoa">
-                                        <!-- Contenido de Cocoa -->
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="tabOthers" role="tabpanel" aria-labelledby="v-pills-others-tab">
                                     <h3>Others</h3>
                                     <div class="row justify-content-center" id="others">
-                                        <!-- Contenido de Others -->
                                     </div>
                                 </div>
                             </div>
@@ -442,6 +431,14 @@
                     <h1>Your Order:</h1>
                 </header>
                 <section id="secOrder">
+
+                  <!-- Carrito de compras -->
+                  <div id="shoppingCart" class="shopping-cart">
+                    <h2>Order Summary</h2>
+                    <ul id="cartItems"></ul>
+                    <p id="totalPrice">Total: $0</p>
+                    <button id="checkoutButton" class="btn btn-success">Checkout</button>
+                  </div>
 
                 </section>
             </article>
@@ -578,7 +575,7 @@
                 $.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=Breakfast", function(data) { // Se obtiene la API
                   $.each(data.meals, function(i, item) { // Se itera por cada objeto del archivo
                     $("#breakfast").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
@@ -596,7 +593,7 @@
                 $.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=Starter", function(data) { // Se obtiene la API
                   $.each(data.meals, function(i, item) { // Se itera por cada objeto del archivo
                     $("#starter").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
@@ -614,7 +611,7 @@
                 $.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef", function(data) { // Se obtiene la API
                   $.each(data.meals, function(i, item) { // Se itera por cada objeto del archivo
                     $("#beef").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
@@ -632,7 +629,7 @@
                 $.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken", function(data) { // Se obtiene la API
                   $.each(data.meals, function(i, item) { // Se itera por cada objeto del archivo
                     $("#chicken").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
@@ -650,7 +647,7 @@
                 $.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=Lamb", function(data) { // Se obtiene la API
                   $.each(data.meals, function(i, item) { // Se itera por cada objeto del archivo
                     $("#lamb").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
@@ -668,7 +665,7 @@
                 $.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=Pork", function(data) { // Se obtiene la API
                   $.each(data.meals, function(i, item) { // Se itera por cada objeto del archivo
                     $("#pork").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
@@ -686,7 +683,7 @@
                 $.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood", function(data) { // Se obtiene la API
                   $.each(data.meals, function(i, item) { // Se itera por cada objeto del archivo
                     $("#seafood").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
@@ -704,7 +701,7 @@
                 $.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=Pasta", function(data) { // Se obtiene la API
                   $.each(data.meals, function(i, item) { // Se itera por cada objeto del archivo
                     $("#pasta").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
@@ -722,7 +719,7 @@
                 $.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=Miscellaneous", function(data) { // Se obtiene la API
                   $.each(data.meals, function(i, item) { // Se itera por cada objeto del archivo
                     $("#miscellaneous").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
@@ -740,7 +737,7 @@
                 $.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegetarian", function(data) { // Se obtiene la API
                   $.each(data.meals, function(i, item) { // Se itera por cada objeto del archivo
                     $("#veggie").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
@@ -757,7 +754,7 @@
                 $.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegan", function(data) { // Se obtiene la API
                   $.each(data.meals, function(i, item) { // Se itera por cada objeto del archivo
                     $("#veggie").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
@@ -775,7 +772,7 @@
                 $.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=Side", function(data) { // Se obtiene la API
                   $.each(data.meals, function(i, item) { // Se itera por cada objeto del archivo
                     $("#sides").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
@@ -793,7 +790,7 @@
                 $.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert", function(data) { // Se obtiene la API
                   $.each(data.meals, function(i, item) { // Se itera por cada objeto del archivo
                     $("#desserts").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
@@ -811,7 +808,7 @@
                 $.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink", function(data) { // Se obtiene la API
                   $.each(data.drinks, function(i, item) { // Se itera por cada objeto del archivo
                     $("#ordinaryDrinks").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
@@ -829,7 +826,7 @@
                 $.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail", function(data) { // Se obtiene la API
                   $.each(data.drinks, function(i, item) { // Se itera por cada objeto del archivo
                     $("#cocktail").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
@@ -847,7 +844,7 @@
                 $.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Shake", function(data) { // Se obtiene la API
                   $.each(data.drinks, function(i, item) { // Se itera por cada objeto del archivo
                     $("#shake").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
@@ -865,7 +862,7 @@
                 $.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Shot", function(data) { // Se obtiene la API
                   $.each(data.drinks, function(i, item) { // Se itera por cada objeto del archivo
                     $("#shot").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
@@ -883,7 +880,7 @@
                 $.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Beer", function(data) { // Se obtiene la API
                   $.each(data.drinks, function(i, item) { // Se itera por cada objeto del archivo
                     $("#beer").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
@@ -901,7 +898,7 @@
                 $.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Homemade_Liqueur", function(data) { // Se obtiene la API
                   $.each(data.drinks, function(i, item) { // Se itera por cada objeto del archivo
                     $("#homemadeLiqueur").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
@@ -919,7 +916,7 @@
                 $.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Punch_/_Party_Drink", function(data) { // Se obtiene la API
                   $.each(data.drinks, function(i, item) { // Se itera por cada objeto del archivo
                     $("#party").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
@@ -937,7 +934,7 @@
                 $.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Soft_Drink", function(data) { // Se obtiene la API
                   $.each(data.drinks, function(i, item) { // Se itera por cada objeto del archivo
                     $("#softDrinks").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
@@ -955,7 +952,7 @@
                 $.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Coffee_/_Tea", function(data) { // Se obtiene la API
                   $.each(data.drinks, function(i, item) { // Se itera por cada objeto del archivo
                     $("#coffeeTea").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
@@ -973,7 +970,7 @@
                 $.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocoa", function(data) { // Se obtiene la API
                   $.each(data.drinks, function(i, item) { // Se itera por cada objeto del archivo
                     $("#cocoa").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
@@ -991,7 +988,7 @@
                 $.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Other_/_Unknown", function(data) { // Se obtiene la API
                   $.each(data.drinks, function(i, item) { // Se itera por cada objeto del archivo
                     $("#others").append( // Agregamos cards
-                      `<div class="col-md-3 col-sm-12">
+                      `<div class="col-lg-3 col-md-4 col-sm-12">
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
@@ -1005,9 +1002,53 @@
                   });
                 });
 
-
-
             // FIN MENU
+            
+
+            // PEDIDO
+
+
+
+            let carro = [];
+            let total = 0;
+
+            function updateCart() {
+                $("#cartItems").empty();
+                carro.forEach(item => {
+                    $("#cartItems").append(
+                        `<li>
+                            <p>${item.name}</p>
+                            <p>$${item.price}</p>
+                        </li>`
+                    );
+                });
+                $("#totalPrice").text(`Total: $${total}`);
+            }
+
+            $(document).on('click', '.btn-dark', function() {
+                let item = $(this).closest('.card');
+                let itemName = item.find('.card-title').text();
+                let itemPrice = parseInt(item.find('p').text().substring(1));
+
+                carro.push({ name: itemName, price: itemPrice });
+                total += itemPrice;
+
+                updateCart();
+            });
+
+            $("#checkoutButton").on('click', function() {
+                alert("Proceeding to checkout. Total: $" + total.toFixed(2));
+                // Aquí puedes añadir lógica para procesar el pago
+            });
+
+
+
+
+
+
+
+
+
 
 
             // FORMULARIO DE CONTACTO

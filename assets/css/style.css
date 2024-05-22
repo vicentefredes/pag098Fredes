@@ -67,7 +67,7 @@ header {
 header h1 {
     font-weight: bold;
     font-family: Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 35px;
+    font-size: 50px;
 }
 
 header p {
@@ -195,6 +195,13 @@ section {
     width: 70%;
 }
 
+.sticky-nav {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 150px;
+    z-index: 1000; /* Ajusta esto según tus necesidades */
+}
+
 #v-pills-tab-md {
     border-top: 2px solid rgb(68, 27, 27);
 }
@@ -224,6 +231,7 @@ section {
 
 #v-pills-tab-sm {
     justify-content: center;
+    margin-bottom: 5%;
 }
 
 #v-pills-tab-sm .nav-link {
@@ -234,6 +242,25 @@ section {
     text-align: center;
     border: 2px solid rgb(68, 27, 27);
 }
+
+#v-pills-tabContent-meals, #v-pills-tabContent-cocktails {
+    background-color: rgb(209, 168, 168);
+    padding: 5%;
+    margin-left: -5%;
+    border: 2px solid rgb(68, 27, 27);
+}
+
+#v-pills-tabContent-meals h3, #v-pills-tabContent-cocktails h3 {
+    background-color: white;
+    color: rgb(68, 27, 27);;
+    border: 2px solid rgb(68, 27, 27);
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
 
 .is-invalid {
     background-color: rgb(255, 212, 215) !important;
@@ -255,4 +282,35 @@ section {
     font-weight: 600;
     padding-left: 3%;
     padding-right: 3%;
+}
+
+
+
+
+
+.shopping-cart {
+    width: 300px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.shopping-cart h2 {
+    margin-top: 0;
+}
+
+.shopping-cart ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.shopping-cart ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.shopping-cart ul li p {
+    margin: 0;
 }
