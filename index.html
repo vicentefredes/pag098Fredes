@@ -229,7 +229,7 @@
                     </div>
                     <div class="container meals" id="menumeals">
                         <div class="row justify-content-center">
-                            <div class="col-md-3 d-none d-md-block">
+                            <div class="col-lg-2 col-md-2 d-none d-md-block">
                                 <div class="nav flex-column nav-pills sticky-nav" id="v-pills-tab-md" role="tablist" aria-orientation="vertical">
                                     <a class="nav-link active" id="v-pills-breakfast-tab" data-toggle="pill" href="#tabBreakfast" role="tab" aria-controls="tabBreakfast" aria-selected="true">Breakfast</a>
                                     <a class="nav-link" id="v-pills-starter-tab" data-toggle="pill" href="#tabStarter" role="tab" aria-controls="tabStarter" aria-selected="false">Starters</a>
@@ -261,7 +261,7 @@
                                   <a class="nav-link" id="v-pills-desserts-tab" data-toggle="pill" href="#tabDesserts" role="tab" aria-controls="tabDesserts" aria-selected="false">Desserts</a>
                               </div>
                           </div>
-                          <div class="col-md-9 d-md-block">
+                          <div class="col-lg-10 col-md-10 d-md-block">
                             <div class="tab-content" id="v-pills-tabContent-meals">
                                 <div class="tab-pane fade show active" id="tabBreakfast" role="tabpanel" aria-labelledby="v-pills-breakfast-tab">
                                     <h3>Breakfast</h3>
@@ -331,8 +331,8 @@
                       
                     <div class="container cocktails" id="menucocktails">
                       <div class="row justify-content-center">
-                          <div class="col-md-3 d-none d-md-block">
-                              <div class="nav flex-column nav-pills" id="v-pills-tab-md" role="tablist" aria-orientation="vertical">
+                          <div class="col-md-2 d-none d-md-block">
+                              <div class="nav flex-column nav-pills sticky-nav" id="v-pills-tab-md" role="tablist" aria-orientation="vertical">
                                   <a class="nav-link active" id="v-pills-ordinary-drinks-tab" data-toggle="pill" href="#tabOrdinaryDrinks" role="tab" aria-controls="tabOrdinaryDrinks" aria-selected="true">Ordinary Drinks</a>
                                   <a class="nav-link" id="v-pills-cocktail-tab" data-toggle="pill" href="#tabCocktail" role="tab" aria-controls="tabCocktail" aria-selected="false">Cocktail</a>
                                   <a class="nav-link" id="v-pills-shake-tab" data-toggle="pill" href="#tabShake" role="tab" aria-controls="tabShake" aria-selected="false">Shake</a>
@@ -361,7 +361,7 @@
                                   <a class="nav-link" id="v-pills-others-tab" data-toggle="pill" href="#tabOthers" role="tab" aria-controls="tabOthers" aria-selected="false">Others</a>
                               </div>
                           </div>
-                          <div class="col-md-9 d-md-block">
+                          <div class="col-md-10 d-md-block">
                             <div class="tab-content" id="v-pills-tabContent-cocktails">
                                 <div class="tab-pane fade show active" id="tabOrdinaryDrinks" role="tabpanel" aria-labelledby="v-pills-ordinary-drinks-tab">
                                     <h3>Ordinary Drinks</h3>
@@ -473,20 +473,74 @@
                 </header>
                 <section id="secOrder">
 
-                  <div class="row justify-content-center">
-                    <div class="col-10">
-                      <div id="carrito" class="carrito">
-                        <h2>Order Summary</h2>
-                        <ul id="cartItems"></ul>
-                        <p id="totalPrice">Total: $0</p>
+                  <div class="container order">
+                    <div class="row justify-content-center">
+                      <div class="col-md-6 col-sm-12">
+                        <div id="carrito">
+                          <h2>Order Summary</h2>
+                          <table id="cartTable">
+                              <thead>
+                                  <tr>
+                                      
+                                  </tr>
+                              </thead>
+                              <tbody id="cartItems"></tbody>
+                          </table>
+                          <p id="totalPrice">Total: $0</p>
+                      </div>
+                      </div>
+                      <div class="col-md-6 col-sm-12">
+                        <div id="datosPago">
+                          <h2>Customer Information</h2>
+                          <form id="formPago">
+                            <div class="form-row justify-content-center">
+                              <div class="form-group col-lg-10 col-md-12">
+                                <label for="inputDireccion">Delivery Address *</label>
+                                <input type="text" class="form-control" id="inputDireccion" placeholder="1st Ave #2900">
+                                <div class="invalid-feedback" id="direccionError"></div>
+                              </div>
+                            </div>
+                            <div class="form-row justify-content-center">
+                                <div class="form-group col-lg-5 col-md-6">
+                                    <label for="inputCustName">Customer Name *</label>
+                                    <input type="text" class="form-control" id="inputCustName" placeholder="John Doe">
+                                    <div class="invalid-feedback" id="customerError"></div>
+                                </div>
+                                <div class="form-group col-lg-5 col-md-6">
+                                    <label for="inputCustPhone">Phone Number *</label>
+                                    <input type="number" class="form-control" id="inputCustPhone" placeholder="9XXXXXXXX">
+                                    <div class="invalid-feedback" id="custPhoneError"></div>
+                                </div>
+                            </div>
+                            <div class="form-row justify-content-center">
+                                <div class="form-group col-lg-10 col-md-12">
+                                  <label for="inputTarjeta">Card Number *</label>
+                                  <input type="number" class="form-control" id="inputTarjeta" placeholder="16 digits">
+                                  <div class="invalid-feedback" id="tarjetaError"></div>
+                              </div>
+                            </div>
+                            <div class="form-row justify-content-center">
+                              <div class="form-group col-lg-5 col-md-6">
+                                  <label for="inputCVC">CVC *</label>
+                                  <input type="password" class="form-control" id="inputCVC" placeholder="***">
+                                  <div class="invalid-feedback" id="cvcError"></div>
+                              </div>
+                              <div class="form-group col-lg-5 col-md-6">
+                                <label for="inputExp">Exp. Date *</label>
+                                <input type="text" class="form-control" id="inputExp" placeholder="MM/YYYY">
+                                <div class="invalid-feedback" id="expError"></div>
+                            </div>
+                          </div>
+                        </form>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row justify-content-center">
+                      <div class="col-10" id="colCheckout">
                         <button id="checkoutButton" class="btn btn-success">Checkout</button>
                       </div>
                     </div>
-
                   </div>
-
-                  
-
                 </section>
             </article>
 
@@ -1061,11 +1115,11 @@
                   $("#cartItems").empty();
                   carro.forEach((item, index) => {
                       $("#cartItems").append(
-                          `<li>
-                              <p>${item.name}</p>
-                              <p>$${item.price}</p>
-                              <button class="remove-item" data-index="${index}">Remove</button>
-                          </li>`
+                          `<tr>
+                              <td>${item.name}</td>
+                              <td>$${item.price}</td>
+                              <td class="remove-td"><button class="remove-item" data-index="${index}">Remove</button></td>
+                          </tr>`
                       );
                   });
                   $("#totalPrice").text(`Total: $${total}`);
@@ -1117,9 +1171,249 @@
                   updateCart();
               });
 
+              // Validación Formulario 'Customer Information'
+
+
+              // Variables con el formato que deben cumplir los campos de dirección, número de tarjeta, cvc y fecha de expiración
+              var formatoDireccion = /^[a-zA-Z0-9\s]+ #[0-9]{4}$/; // Debe terminar con " #XXXX"
+              var formatoTarjeta = /^[0-9]{16}$/; // 16 dígitos
+              var formatoCVC = /^[0-9]{3}$/; // 3 dígitos
+              var formatoExp = /^(0[1-9]|1[0-2])\/[0-9]{4}$/; // MM/YYYY
+
+              // Validación en tiempo real para Delivery Address
+              $("#inputDireccion").focusout(function() {
+                  let direccion = $(this).val();
+                  if (direccion.trim() !== '' && !formatoDireccion.test(direccion)) {
+                      $("#inputDireccion").addClass("is-invalid");
+                      $("#direccionError").text("Please, enter a valid address").show();
+                  } else {
+                      $("#inputDireccion").removeClass("is-invalid");
+                      $("#direccionError").hide();
+                  }
+              });
+
+              $("#inputDireccion").focus(function() {
+                  $("#inputDireccion").removeClass("is-invalid");
+                  $("#direccionError").hide();
+              });
+
+              // Validación en tiempo real para Customer Name
+              $("#inputCustName").on("input", function() {
+                  var customerName = $(this).val();
+                  if (customerName.trim() === '') {
+                      $("#inputCustName").addClass("is-invalid");
+                      $("#customerError").text("Customer name is required").show();
+                  } else {
+                      $("#inputCustName").removeClass("is-invalid");
+                      $("#customerError").hide();
+                  }
+              });
+
+              $("#inputCustName").focus(function() {
+                  $("#inputCustName").removeClass("is-invalid");
+                  $("#customerError").hide();
+              });
+
+              // Validación en tiempo real para Phone Number
+              $("#inputCustPhone").on('input', function() {
+                  let maxLength = 9; // Define la longitud máxima permitida
+                  this.value = this.value.replace(/\D/g, ''); // Elimina cualquier caracter no numérico
+                  if (this.value.length > maxLength) {
+                      this.value = this.value.slice(0, maxLength); // Limita la longitud del valor al máximo permitido
+                  }
+              });
+
+              $("#inputCustPhone").focusout(function() {
+                  let telefono = $(this).val();
+                  if (telefono.trim() !== '' && telefono < 900000000) {
+                      $("#inputCustPhone").addClass("is-invalid");
+                      $("#custPhoneError").text("Please, enter a valid phone number").show();
+                  } else {
+                      $("#inputCustPhone").removeClass("is-invalid");
+                      $("#custPhoneError").hide();
+                  }
+              });
+
+              $("#inputCustPhone").focus(function() {
+                  $("#inputCustPhone").removeClass("is-invalid");
+                  $("#custPhoneError").hide();
+              });
+
+              // Validación en tiempo real para Card Number
+              $("#inputTarjeta").on('input', function() {
+                  let maxLength = 16; // Define la longitud máxima permitida
+                  this.value = this.value.replace(/\D/g, ''); // Elimina cualquier caracter no numérico
+                  if (this.value.length > maxLength) {
+                      this.value = this.value.slice(0, maxLength); // Limita la longitud del valor al máximo permitido
+                  }
+              });
+
+              $("#inputTarjeta").focusout(function() {
+                  let tarjeta = $(this).val();
+                  if (tarjeta.trim() !== '' && tarjeta.length !== 16) {
+                      $("#inputTarjeta").addClass("is-invalid");
+                      $("#tarjetaError").text("Please, enter a valid card number").show();
+                  } else {
+                      $("#inputTarjeta").removeClass("is-invalid");
+                      $("#tarjetaError").hide();
+                  }
+              });
+
+              $("#inputTarjeta").focus(function() {
+                  $("#inputTarjeta").removeClass("is-invalid");
+                  $("#tarjetaError").hide();
+              });
+
+              // Validación en tiempo real para CVC
+              $("#inputCVC").on('input', function() {
+                  let maxLength = 3; // Define la longitud máxima permitida
+                  this.value = this.value.replace(/\D/g, ''); // Elimina cualquier caracter no numérico
+                  if (this.value.length > maxLength) {
+                      this.value = this.value.slice(0, maxLength); // Limita la longitud del valor al máximo permitido
+                  }
+              });
+
+              $("#inputCVC").focusout(function() {
+                  let cvc = $(this).val();
+                  if (cvc.trim() !== '' && cvc.length !== 3) {
+                      $("#inputCVC").addClass("is-invalid");
+                      $("#cvcError").text("Please, enter a valid CVC code").show();
+                  } else {
+                      $("#inputCVC").removeClass("is-invalid");
+                      $("#cvcError").hide();
+                  }
+              });
+
+              $("#inputCVC").focus(function() {
+                  $("#inputCVC").removeClass("is-invalid");
+                  $("#cvcError").hide();
+              });
+
+              // Validación en tiempo real para fecha de expiración de tarjeta
+              $("#inputExp").focusout(function() {
+                  let expDate = $(this).val();
+                  if (expDate.trim() !== '' && !formatoExp.test(expDate)) { //Validación de formato
+                      $("#inputExp").addClass("is-invalid");
+                      $("#expError").text("Please, enter a valid expiration date (MM/YYYY format)").show();
+                  } else { // Validación de vigencia de tarjeta
+                      let today = new Date();
+                      let parts = expDate.split('/');
+                      let expMonth = parseInt(parts[0], 10);
+                      let expYear = parseInt(parts[1], 10);
+                      let expDateObj = new Date(expYear, expMonth - 1); // La fecha de expiración en objeto Date
+                      if (expDateObj < today) {
+                          $("#inputExp").addClass("is-invalid");
+                          $("#expError").text("The card has expired").show();
+                      } else {
+                          $("#inputExp").removeClass("is-invalid");
+                          $("#expError").hide();
+                      }
+                  }
+              });
+
+              $("#inputExp").focus(function() {
+                  $("#inputExp").removeClass("is-invalid");
+                  $("#expError").hide();
+              });
+
+
               $("#checkoutButton").on('click', function() {
-                  alert("Proceeding to checkout. Total: $" + total);
-                  // Aquí puedes añadir lógica para procesar el pago
+
+                // Validación final de formulario de información de cliente - en caso que el usuario haya ignorado avisos anteriores o no haya llenado ningún campo
+                let direccion = $("#inputDireccion").val();
+                let customerName = $("#inputCustName").val();
+                let telefono = $("#inputCustPhone").val();
+                let tarjeta = $("#inputTarjeta").val();
+                let cvc = $("#inputCVC").val();
+                let expDate = $("#inputExp").val();
+
+                let formularioValido = true;
+
+                // Validación de dirección
+                if (direccion.trim() === '') {
+                    $("#inputDireccion").addClass("is-invalid");
+                    $("#direccionError").text("Delivery address is required.").show();
+                    formularioValido = false;
+                } else if (!formatoDireccion.test(direccion)) {
+                    $("#inputDireccion").addClass("is-invalid");
+                    $("#direccionError").text("Please enter a valid address.").show();
+                    formularioValido = false;
+                }
+
+                // Validación de nombre del cliente
+                if (customerName.trim() === '') {
+                    $("#inputCustName").addClass("is-invalid");
+                    $("#customerError").text("Customer name is required").show();
+                    formularioValido = false;
+                }
+
+                // Validación de número de teléfono
+                if (telefono.trim() !== '') {
+                    $("#inputCustPhone").addClass("is-invalid");
+                    $("#custPhoneError").text("Phone number is required").show();
+                    formularioValido = false;
+                } else if (telefono.length !== 9 || telefono < 900000000) {
+                    $("#inputCustPhone").addClass("is-invalid");
+                    $("#custPhoneError").text("Please, enter a valid phone number.").show();
+                    formularioValido = false;
+                }
+
+                // Validación de número de tarjeta
+                if (tarjeta.trim() === '') {
+                    $("#inputTarjeta").addClass("is-invalid");
+                    $("#tarjetaError").text("Card number is required.").show();
+                    formularioValido = false;
+                } else if (tarjeta.length !== 16) {
+                    $("#inputTarjeta").addClass("is-invalid");
+                    $("#tarjetaError").text("Please enter a valid card number.").show();
+                    formularioValido = false;
+                }
+
+                // Validación de CVC
+                if (cvc.trim() === '') {
+                    $("#inputCVC").addClass("is-invalid");
+                    $("#cvcError").text("CVC code is required.").show();
+                    formularioValido = false;
+                } else if (cvc.length !== 3) {
+                    $("#inputCVC").addClass("is-invalid");
+                    $("#cvcError").text("Please enter a valid CVC code").show();
+                    formularioValido = false;
+                }
+
+                // Validación de fecha de expiración
+                if (expDate.trim() === '') {
+                    $("#inputExp").addClass("is-invalid");
+                    $("#expError").text("Expiration date is required.").show();
+                    formularioValido = false;
+                } else if (!formatoExp.test(expDate)) {
+                    $("#inputExp").addClass("is-invalid");
+                    $("#expError").text("Please enter a valid expiration date (MM/YYYY format)").show();
+                    formularioValido = false;
+                } else {
+                    let today = new Date();
+                    let parts = expDate.split('/');
+                    let expMonth = parseInt(parts[0], 10);
+                    let expYear = parseInt(parts[1], 10);
+                    let expDateObj = new Date(expYear, expMonth - 1); // La fecha de expiración en objeto Date
+                    if (expDateObj < today) {
+                        $("#inputExp").addClass("is-invalid");
+                        $("#expError").text("The card has expired.").show();
+                        formularioValido = false;
+                    }
+                }
+
+                // Si el formulario es válido, simular el envío o proceder al siguiente paso
+                if (formularioValido) {
+                    alert("Payment details validated. Proceeding...");
+                    // Aquí podrías agregar lógica adicional para enviar los datos o proceder con el pago simulado
+                    $("#formPago")[0].reset(); // Limpiar el formulario después de la validación exitosa
+
+                    carro = [];
+                    total = 0;
+
+                    updateCart();
+                }
+
               });
 
             // FIN PEDIDO
@@ -1206,7 +1500,7 @@
                   });
 
 
-                  // Validaciones en tiempo real, previas al envío, con avisos al usuario de que no está completando el formulario correctamente
+                // Validaciones en tiempo real, previas al envío, con avisos al usuario de que no está completando el formulario correctamente
 
                   // Nombre y Apellido - mientras el usuario teclea, verifica que no esté ingresando caracteres no permitidos
                   // Los campos no debe estar marcado como inválidos mientras esten vacíos o se esté ingresando texto correctamente
