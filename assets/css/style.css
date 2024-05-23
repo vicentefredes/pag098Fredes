@@ -246,7 +246,7 @@ section {
 #v-pills-tabContent-meals, #v-pills-tabContent-cocktails {
     background-color: rgb(209, 168, 168);
     padding: 5%;
-    margin-left: -5%;
+    margin-left: -6%;
     border: 2px solid rgb(68, 27, 27);
 }
 
@@ -261,6 +261,47 @@ section {
     margin-bottom: 5%;
 }
 
+.card.comida {
+	margin-bottom: 5%; 
+	border: 3px solid rgb(68, 27, 27); 
+    text-align: center;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    height: 98%;
+}
+
+.card.comida h5 {
+    font-weight: bold;
+}
+
+.card.comida p {
+    color: rgb(28, 119, 28);
+	font-size: 20px;
+	text-align: center;
+}
+
+.card.comida img, .card.pelicula img {
+	border-bottom: 3px solid rgb(68, 27, 27);
+}
+
+.card.comida .btn-dark {
+    background-color: rgb(68, 27, 27);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.modal-title, .modal-body, .modal-footer {
+    text-align: center;
+    justify-content: center;
+}
+
+.modal-footer button {
+    font-size: 20px;
+}
+
+.modal-footer .btn-primary {
+    background-color: rgb(68, 27, 27);
+    color: white;
+}
 
 .is-invalid {
     background-color: rgb(255, 212, 215) !important;
@@ -288,29 +329,28 @@ section {
 
 
 
-.shopping-cart {
-    width: 300px;
+.carrito {
     background: #f8f9fa;
     border: 1px solid #ddd;
     padding: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.shopping-cart h2 {
+.carrito h2 {
     margin-top: 0;
 }
 
-.shopping-cart ul {
+.carrito ul {
     list-style-type: none;
     padding: 0;
 }
 
-.shopping-cart ul li {
+.carrito ul li {
     display: flex;
     justify-content: space-between;
     padding: 5px 0;
 }
 
-.shopping-cart ul li p {
+.carrito ul li p {
     margin: 0;
 }

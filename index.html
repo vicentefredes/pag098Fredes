@@ -423,6 +423,47 @@
                         
                       </div>
                     </div> 
+
+                    <div class="modal fade" id="modalConfirmation" tabindex="-1" role="dialog" aria-labelledby="modalConfirmationLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                  </button>
+                              </div>
+                              <div class="modal-body">
+                                  <p>Are you sure you want to add <strong><span id="productName"></span></strong> to your order?</p>
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                  <button type="button" class="btn btn-primary" id="confirmAddToCartBtn">Confirm</button>
+                              </div>
+                          </div>
+                      </div>
+                    </div> 
+                    
+                    <div class="modal fade" id="modalConfirmed" tabindex="-1" role="dialog" aria-labelledby="modalConfirmedLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="confirmationModalLabel">Confirmation</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <p><strong id="productName2"></strong> has been added to your cart.</p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+
                 </section>
             </article>
 
@@ -432,13 +473,19 @@
                 </header>
                 <section id="secOrder">
 
-                  <!-- Carrito de compras -->
-                  <div id="shoppingCart" class="shopping-cart">
-                    <h2>Order Summary</h2>
-                    <ul id="cartItems"></ul>
-                    <p id="totalPrice">Total: $0</p>
-                    <button id="checkoutButton" class="btn btn-success">Checkout</button>
+                  <div class="row justify-content-center">
+                    <div class="col-10">
+                      <div id="carrito" class="carrito">
+                        <h2>Order Summary</h2>
+                        <ul id="cartItems"></ul>
+                        <p id="totalPrice">Total: $0</p>
+                        <button id="checkoutButton" class="btn btn-success">Checkout</button>
+                      </div>
+                    </div>
+
                   </div>
+
+                  
 
                 </section>
             </article>
@@ -451,13 +498,13 @@
                     <form id="formContact">
                         <div class="form-row justify-content-center">
                             <div class="form-group col-lg-4 col-md-5">
-                                <label for="inputNombre">Name *</label>
-                                <input type="text" class="form-control" id="inputNombre" placeholder="Name">
+                                <label for="inputNombre">First Name *</label>
+                                <input type="text" class="form-control" id="inputNombre" placeholder="John">
                                 <div class="invalid-feedback" id="nombreError"></div>
                             </div>
                             <div class="form-group col-lg-4 col-md-5">
                                 <label for="inputApellido">Last Name *</label>
-                                <input type="text" class="form-control" id="inputApellido" placeholder="Last Name">
+                                <input type="text" class="form-control" id="inputApellido" placeholder="Doe">
                                 <div class="invalid-feedback" id="apellidoError"></div>
                             </div>
                         </div>
@@ -581,7 +628,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -599,7 +646,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -617,7 +664,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -635,7 +682,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -653,7 +700,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -671,7 +718,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -689,7 +736,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -707,7 +754,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -725,7 +772,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -743,7 +790,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -760,7 +807,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -778,7 +825,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -796,7 +843,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -814,7 +861,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -832,7 +879,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -850,7 +897,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -868,7 +915,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -886,7 +933,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -904,7 +951,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -922,7 +969,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -940,7 +987,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -958,7 +1005,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -976,7 +1023,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -994,7 +1041,7 @@
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
                               <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
-                              <button type="button" class="btn btn-dark">Add to Order</button>
+                              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
                       </div>` 
@@ -1007,48 +1054,75 @@
 
             // PEDIDO
 
+              var carro = [];
+              var total = 0;
+
+              function updateCart() {
+                  $("#cartItems").empty();
+                  carro.forEach((item, index) => {
+                      $("#cartItems").append(
+                          `<li>
+                              <p>${item.name}</p>
+                              <p>$${item.price}</p>
+                              <button class="remove-item" data-index="${index}">Remove</button>
+                          </li>`
+                      );
+                  });
+                  $("#totalPrice").text(`Total: $${total}`);
+              }
+
+              $(document).on('click', '.btn-dark', function() {
+                  let item = $(this).closest('.card');
+                  let itemName = item.find('.card-title').text();
+                  let itemPrice = parseInt(item.find('p').text().substring(1));
+
+                  console.log(itemName);
+                  console.log(itemPrice);
 
 
-            let carro = [];
-            let total = 0;
+                  // Actualizar el nombre del producto en el modal
+                  $('#productName').text(itemName);
 
-            function updateCart() {
-                $("#cartItems").empty();
-                carro.forEach(item => {
-                    $("#cartItems").append(
-                        `<li>
-                            <p>${item.name}</p>
-                            <p>$${item.price}</p>
-                        </li>`
-                    );
-                });
-                $("#totalPrice").text(`Total: $${total}`);
-            }
+                  // Mostrar el mensaje de confirmación con el nombre del producto
+                  $('#confirmationMessage').text(`Are you sure you want to add ${itemName} to your order?`);
 
-            $(document).on('click', '.btn-dark', function() {
-                let item = $(this).closest('.card');
-                let itemName = item.find('.card-title').text();
-                let itemPrice = parseInt(item.find('p').text().substring(1));
+                  // Guardar los datos del producto en el botón de confirmación
+                  $('#confirmAddToCartBtn').data('itemName', itemName);
+                  $('#confirmAddToCartBtn').data('itemPrice', itemPrice);
+              });
 
-                carro.push({ name: itemName, price: itemPrice });
-                total += itemPrice;
+              $(document).on('click', '#confirmAddToCartBtn', function() {
+                  let itemName = $(this).data('itemName');
+                  let itemPrice = parseFloat($(this).data('itemPrice'));
 
-                updateCart();
-            });
+                  carro.push({ name: itemName, price: itemPrice });
+                  total += itemPrice;
 
-            $("#checkoutButton").on('click', function() {
-                alert("Proceeding to checkout. Total: $" + total.toFixed(2));
-                // Aquí puedes añadir lógica para procesar el pago
-            });
+                  updateCart();
 
+                  $('#modalConfirmation').modal('hide');
 
+                  // Actualizar el nombre del producto en el modal
+                  $('#productName2').html(`<strong>${itemName}</strong>`);
 
+                  // Mostrar el modal de confirmación
+                  $('#modalConfirmed').modal('show');
+              });
 
+              $(document).on('click', '.remove-item', function() {
+                  let itemIndex = $(this).data('index');
+                  total -= carro[itemIndex].price;
+                  carro.splice(itemIndex, 1);
 
+                  updateCart();
+              });
 
+              $("#checkoutButton").on('click', function() {
+                  alert("Proceeding to checkout. Total: $" + total);
+                  // Aquí puedes añadir lógica para procesar el pago
+              });
 
-
-
+            // FIN PEDIDO
 
 
             // FORMULARIO DE CONTACTO
