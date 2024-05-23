@@ -147,6 +147,7 @@ section {
     margin-bottom: 5%;
     color: rgb(68, 27, 27);
     height: 95%;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container.equipo .card img {
@@ -168,6 +169,7 @@ section {
     background-color: white;
     color: rgb(68, 27, 27);
     text-align: left;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .card.location h3 {
