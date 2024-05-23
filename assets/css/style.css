@@ -63,7 +63,7 @@ header {
     width: 100%;
     color: white;
     background-color: rgb(161, 100, 100);
-    margin-bottom: 5%;
+    margin-bottom: 3%;
     padding-top: 1%;
     padding-bottom: 1%;
 }
@@ -411,8 +411,17 @@ section {
     padding-right: 3%;
 }
 
-#ordenLista {
+#ordenAlert {
     text-align: center;
     vertical-align: middle;
     margin-bottom: 2%;
 }
+
+#ordenAlert .alert {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.hidden {
+    display: none;
+  }

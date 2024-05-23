@@ -473,17 +473,7 @@
                 </header>
                 <section id="secOrder">
 
-                  <div class="row justify-content-center" id="ordenLista" style="display: none;">
-                    <div class="col-md-7 col-sm-12">
-                      <div class="alert alert-success" role="alert">
-                        This is a success alert—check it out!
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <button id="clearButton" class="btn btn-success">Clear</button>
-                    </div>
-                  </div>
-
+                  <div class="row justify-content-center hidden" id="ordenAlert"></div>
                   
                   <div class="container order">
                     <div class="row justify-content-center">
@@ -1200,7 +1190,6 @@
 
               // Validación Formulario 'Customer Information'
 
-
               // Variables con el formato que deben cumplir los campos de dirección, número de tarjeta, cvc y fecha de expiración
               var formatoDireccion = /^[a-zA-Z0-9\s]+ #[0-9]{4}$/; // Debe terminar con " #XXXX"
               var formatoTarjeta = /^[0-9]{16}$/; // 16 dígitos
@@ -1431,9 +1420,16 @@
 
                 // Si el formulario es válido, simular el envío o proceder al siguiente paso
                 if (formularioValido && carro.length !== 0) {
-                  $("#ordenLista").show();
-                  //alert("Payment details validated. Proceeding...");
-                  // Aquí podrías agregar lógica adicional para enviar los datos o proceder con el pago simulado
+                  $("#ordenAlert").html(`
+                      <div class="col-md-8 col-sm-12">
+                        <div class="alert alert-success" role="alert">
+                          We're ready, your order is on the way! - Thanks for choosing us, and enjoy your meal!
+                        </div>
+                      </div>
+                    `);
+                  
+                  $("#ordenAlert").removeClass("hidden");
+
                   $("#formPago")[0].reset(); // Limpiar el formulario después de la validación exitosa
 
                   carro = [];
@@ -1442,7 +1438,15 @@
                   updateCart();
                   updateBadge()
                 } else if (carro.length === 0) {
-                  alert("Your order is empty!");
+                  $("#ordenAlert").html(`
+                      <div class="col-md-8 col-sm-12">
+                        <div class="alert alert-danger" role="alert">
+                          Your order is empty!
+                        </div>
+                      </div>
+                    `);
+
+                  $("#ordenAlert").removeClass("hidden");
                 }
 
               });
