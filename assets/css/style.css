@@ -44,6 +44,10 @@ body {
     font-weight: bold;
 }
 
+#orderBadge {
+    display: none;
+}
+
 .panel {
     display: none;
 }
@@ -182,12 +186,12 @@ section {
     border-top: 3px solid rgb(68, 27, 27);
 }
 
-#colbtnmeal, #colbtncocktail {
+#colbtnmeal, #colbtndrink {
     text-align: center;
     margin-bottom: 5%;
 }
 
-#btnMeal, #btnCocktail {
+#btnMeal, #btnDrink {
     font-size: 30px;
     font-family: Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
@@ -246,13 +250,13 @@ section {
     border: 2px solid rgb(68, 27, 27);
 }
 
-#v-pills-tabContent-meals, #v-pills-tabContent-cocktails {
+#v-pills-tabContent-meals, #v-pills-tabContent-drinks {
     background-color: rgb(209, 168, 168);
     padding: 5%;
     border: 2px solid rgb(68, 27, 27);
 }
 
-#v-pills-tabContent-meals h3, #v-pills-tabContent-cocktails h3 {
+#v-pills-tabContent-meals h3, #v-pills-tabContent-drinks h3 {
     background-color: white;
     color: rgb(68, 27, 27);;
     border: 2px solid rgb(68, 27, 27);
@@ -405,4 +409,10 @@ section {
     font-weight: 600;
     padding-left: 3%;
     padding-right: 3%;
+}
+
+#ordenLista {
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 2%;
 }

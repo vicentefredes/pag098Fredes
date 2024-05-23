@@ -32,7 +32,7 @@
               <a class="nav-link" href="#menu">Menu</a>
             </li>
             <li class="nav-item" >
-                <a class="nav-link" href="#order">Your Order <span id="orderBadge" class="badge badge-danger" style="display: none;">0</span></a>
+                <a class="nav-link" href="#order">Your Order <span id="orderBadge" class="badge badge-danger">0</span></a>
               </li>
             <li class="nav-item">
                 <a class="nav-link" href="#contact">Contact</a>
@@ -223,8 +223,8 @@
                       <div class="col-md-5 col-sm-10" id="colbtnmeal">
                         <button id="btnMeal">Meals</button>
                       </div>
-                      <div class="col-md-5 col-sm-10" id="colbtncocktail">
-                        <button id="btnCocktail">Cocktails</button>
+                      <div class="col-md-5 col-sm-10" id="colbtndrink">
+                        <button id="btnDrink">Drinks</button>
                       </div>
                     </div>
                     <div class="container meals" id="menumeals">
@@ -329,7 +329,7 @@
                         </div>
                     </div>
                       
-                    <div class="container cocktails" id="menucocktails">
+                    <div class="container cocktails" id="menudrinks">
                       <div class="row justify-content-center">
                           <div class="col-md-2 d-none d-md-block">
                               <div class="nav flex-column nav-pills sticky-nav" id="v-pills-tab-md" role="tablist" aria-orientation="vertical">
@@ -362,7 +362,7 @@
                               </div>
                           </div>
                           <div class="col-md-10 d-md-block">
-                            <div class="tab-content" id="v-pills-tabContent-cocktails">
+                            <div class="tab-content" id="v-pills-tabContent-drinks">
                                 <div class="tab-pane fade show active" id="tabOrdinaryDrinks" role="tabpanel" aria-labelledby="v-pills-ordinary-drinks-tab">
                                     <h3>Ordinary Drinks</h3>
                                     <div class="row justify-content-center" id="ordinaryDrinks">
@@ -454,7 +454,7 @@
                             </button>
                           </div>
                           <div class="modal-body">
-                            <p><strong id="productName2"></strong> has been added to your cart.</p>
+                            <p><strong id="productName2"></strong> has been added to your cart!</p>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -472,9 +472,19 @@
                     <h1>Your Order:</h1>
                 </header>
                 <section id="secOrder">
-                  <div class="alert alert-success" role="alert" id="ordenLista" style="display: none;">
-                    This is a success alert—check it out!
+
+                  <div class="row justify-content-center" id="ordenLista" style="display: none;">
+                    <div class="col-md-7 col-sm-12">
+                      <div class="alert alert-success" role="alert">
+                        This is a success alert—check it out!
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <button id="clearButton" class="btn btn-success">Clear</button>
+                    </div>
                   </div>
+
+                  
                   <div class="container order">
                     <div class="row justify-content-center">
                       <div class="col-md-6 col-sm-12">
@@ -482,9 +492,7 @@
                           <h2>Order Summary</h2>
                           <table id="cartTable">
                               <thead>
-                                  <tr>
-                                      
-                                  </tr>
+                                  <tr></tr>
                               </thead>
                               <tbody id="cartItems"></tbody>
                           </table>
@@ -656,23 +664,23 @@
 
             // MENU
 
-              const arrayPrecios = [5000, 7500, 8300, 9000, 10200, 11500, 12000, 14500];
-
               // Ocultar el contenedor de cocktails al cargar la página
-              $("#menucocktails").hide();
+              $("#menudrinks").hide();
 
               // Manejar el click en el botón Meals
               $("#btnMeal").click(function() {
-                  $("#menucocktails").hide();
+                  $("#menudrinks").hide();
                   $("#menumeals").show();
               });
 
               // Manejar el click en el botón Cocktails
-              $("#btnCocktail").click(function() {
+              $("#btnDrink").click(function() {
                   $("#menumeals").hide();
-                  $("#menucocktails").show();
+                  $("#menudrinks").show();
               });
 
+
+              // APIs Comidas
               
               // Breakfast
                 $.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=Breakfast", function(data) { // Se obtiene la API
@@ -682,8 +690,8 @@
                           <div class="card comida">
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
-                              <h5 class="card-title">${item.strMeal}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <h5 class="card-title">${item.strMeal}</h5>                              
+                              <p>$${Math.round((parseInt(item.idMeal)/6)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -701,7 +709,7 @@
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idMeal)/7)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -719,7 +727,7 @@
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idMeal)/5)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -737,7 +745,7 @@
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idMeal)/5.5)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -755,7 +763,7 @@
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idMeal)/4.5)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -773,7 +781,7 @@
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idMeal)/5)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -791,7 +799,7 @@
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idMeal)/5.7)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -809,7 +817,7 @@
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idMeal)/7)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -827,7 +835,7 @@
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idMeal)/7.4)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -845,7 +853,7 @@
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idMeal)/5.3)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -862,7 +870,7 @@
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idMeal)/4.7)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -880,7 +888,7 @@
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idMeal)/9.2)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -898,7 +906,7 @@
                             <img class="card-img-top" src="${item.strMealThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strMeal}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idMeal)/8.8)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -906,6 +914,9 @@
                     );
                   });
                 });
+
+
+              // APIs bebidas
 
               // Ordinary Drinks
                 $.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink", function(data) { // Se obtiene la API
@@ -916,7 +927,7 @@
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idDrink)/5.3)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -934,7 +945,7 @@
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idDrink)/4.8)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -952,7 +963,7 @@
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idDrink)/5)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -970,7 +981,7 @@
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idDrink)/6.6)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -988,7 +999,7 @@
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idDrink)/4.5)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -1006,7 +1017,7 @@
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idDrink)/2.7)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -1024,7 +1035,7 @@
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idDrink)/5.1)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -1042,7 +1053,7 @@
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idDrink)/6)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -1060,7 +1071,7 @@
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idDrink)/5.5)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -1078,7 +1089,7 @@
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idDrink)/7)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
@@ -1096,7 +1107,7 @@
                             <img class="card-img-top" src="${item.strDrinkThumb}">
                             <div class="card-body">
                               <h5 class="card-title">${item.strDrink}</h5>
-                              <p>$${arrayPrecios[Math.floor(Math.random() * arrayPrecios.length)]}</p>
+                              <p>$${Math.round((parseInt(item.idDrink)/4.3)/10) * 10}</p>
                               <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalConfirmation">Add to Order</button>
                             </div>
                           </div>
