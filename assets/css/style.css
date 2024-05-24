@@ -131,21 +131,28 @@ section {
 
 @media (max-width: 1200px) {
     #carouselInicio .carousel-caption {
-        width: 66%;  /* Change the width to 50% for medium and smaller screens */
-        left: 17%;   /* Change the left to 25% for medium and smaller screens */
+        width: 66%;  
+        left: 17%; 
     }
 }
 
-.carousel-indicators {
+#carouselInicio .carousel-indicators {
     margin-bottom: 0;
 }
 
-.carousel-indicators li {
+#carouselInicio .carousel-indicators li {
     background-color: rgb(110, 37, 37);
     height: 5px;
     width: 10%;
 }
 
+@media (max-width: 750px) {
+    #carouselInicio .carousel-indicators li {
+        width: 20%;
+    }
+}
+
+/*About Us*/
 .container.intro, .container.story {
     border: 3px solid rgb(68, 27, 27);
     background-color: rgb(161, 100, 100);
@@ -224,6 +231,7 @@ section {
     border-top: 3px solid rgb(68, 27, 27);
 }
 
+/*Menu*/
 #colbtnmeal, #colbtndrink {
     text-align: center;
     margin-bottom: 5%;
@@ -349,28 +357,7 @@ section {
     color: white;
 }
 
-.is-invalid {
-    background-color: rgb(255, 212, 215) !important;
-	border: 3px solid red !important;
-}
-
-.invalid-feedback {
-    color: rgba(220, 53, 70, 0.741) !important;
-}
-
-#formContact {
-    color: rgb(68, 27, 27);
-    font-weight: 500;
-}
-
-#btnEnviar {
-    background-color: rgb(138, 67, 67);
-    font-size: 25px;
-    font-weight: 600;
-    padding-left: 3%;
-    padding-right: 3%;
-}
-
+/*Your Order*/
 .container.order {
     background-color: white;
     color: rgb(68, 27, 27);
@@ -392,8 +379,8 @@ section {
 #cartTable {
     width: 100%;
     margin-bottom: 5%;
-    margin-left: auto; /* Centra la tabla horizontalmente */
-    margin-right: auto; /* Centra la tabla horizontalmente */
+    margin-left: auto; 
+    margin-right: auto; 
     background-color: azure;
 }
 
@@ -462,4 +449,28 @@ section {
 
 .hidden {
     display: none;
-  }
+}
+
+/*Contact Form*/
+#formContact {
+    color: rgb(68, 27, 27);
+    font-weight: 500;
+}
+
+#btnEnviar {
+    background-color: rgb(138, 67, 67);
+    font-size: 25px;
+    font-weight: 600;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+/*Estilos para validación de formulario*/
+.is-invalid {
+    background-color: rgb(255, 212, 215) !important;
+	border: 3px solid red !important;
+}
+
+.invalid-feedback {
+    color: rgba(220, 53, 70, 0.741) !important;
+}
