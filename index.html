@@ -567,6 +567,15 @@
                     <h1>Contact Form:</h1>
                 </header>
                 <section id="secContact">
+                    <div class="row justify-content-center">
+                      <div class="col-lg-7 col-md-10 col-sm-12">
+                        <p>Send us a message and we’ll get back to you as soon as possible. 
+                          You can also reach us by phone, see our location pages for each 
+                          location's direct phone number.
+                          We're looking forward to hearing from you!</p>
+                      </div>
+
+                    </div>
                     <form id="formContact">
                         <div class="form-row justify-content-center">
                             <div class="form-group col-lg-4 col-md-5">
@@ -1439,10 +1448,13 @@
                 // Si el formulario es válido, simular el envío o proceder al siguiente paso
                 if (formularioValido && carro.length !== 0) {
                   $("#ordenAlert").html(`
-                      <div class="col-md-8 col-sm-12">
+                      <div class="col-md-8 col-sm-12 alert-container">
                         <div class="alert alert-success" role="alert">
                           We're ready, your order is on the way! - Thanks for choosing us, and enjoy your meal!
                         </div>
+                      </div>
+                      <div class="col-md-2 col-sm-12">  
+                        <button class="btn btn-secondary" id="btnCloseAlert">Close</button>                      
                       </div>
                     `);
                   
@@ -1458,16 +1470,23 @@
 
                 } else if (carro.length === 0) {
                   $("#ordenAlert").html(`
-                      <div class="col-md-8 col-sm-12">
+                      <div class="col-md-8 col-sm-12 alert-container">
                         <div class="alert alert-danger" role="alert">
                           Your order is empty!
                         </div>
+                      </div>
+                      <div class="col-md-2 col-sm-12">  
+                        <button class="btn btn-secondary" id="btnCloseAlert">Close</button>                      
                       </div>
                     `);
 
                   $("#ordenAlert").removeClass("hidden");
                 }
 
+              });
+
+              $(document).on('click', '#btnCloseAlert', function() {
+                $("#ordenAlert").addClass("hidden");
               });
 
             // FIN PEDIDO

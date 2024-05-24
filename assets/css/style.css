@@ -362,6 +362,7 @@ section {
     background-color: white;
     color: rgb(68, 27, 27);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #carrito {
@@ -410,8 +411,7 @@ section {
 
 #carrito p {
     font-weight: bold;
-    font-size: 20px;
-    margin-left: 5%;
+    font-size: 25px;
     color: rgb(68, 27, 27);;
 }
 
@@ -439,19 +439,53 @@ section {
 #ordenAlert {
     text-align: center;
     vertical-align: middle;
+    align-items: center;
     margin-bottom: 2%;
+}
+
+#ordenAlert .alert-container {
+    align-items: center;
+    vertical-align: middle;
 }
 
 #ordenAlert .alert {
     font-weight: bold;
     font-size: 20px;
+    margin-bottom: 0;
+    justify-content: center;
+}
+
+@media (max-width: 767px) {
+    #ordenAlert .alert {
+        margin-bottom: 3%;
+    }
 }
 
 .hidden {
     display: none;
 }
 
+#btnCloseAlert {
+    font-size: 22px;
+    font-weight: 500;
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    #btnCloseAlert {
+        margin-bottom: 3%;
+    }
+}
+
 /*Contact Form*/
+#secContact p {
+    text-align: center;
+    margin-bottom: 5%;
+    color: rgb(68, 27, 27);
+    font-size: 18px;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+
 #formContact {
     color: rgb(68, 27, 27);
     font-weight: 500;
