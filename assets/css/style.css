@@ -1,7 +1,9 @@
+/*Estilos CSS Pag. 098*/
 body {
     background-color: rgb(249,242,220);
 }
 
+/*Navbar*/
 .navbar {
     background-color: rgb(249,242,220);
     align-items: center;
@@ -44,20 +46,24 @@ body {
     font-weight: bold;
 }
 
+/*Badge indicando productos en la orden*/
 #orderBadge {
     display: none;
 }
 
+/*Sistema de paneles*/
 .panel {
     display: none;
 }
 
+/*Footer*/
 #footer {
     margin-top: 2%;
     text-align: center;
     color: rgb(161, 100, 100);
 }
 
+/*Headers*/
 header {
     text-align: center;
     width: 100%;
@@ -80,11 +86,13 @@ header p {
     font-size: 18px;
 }
 
+/*Márgenes de secciones*/
 section {
     margin-left: 5%;
     margin-right: 5%;
 }
 
+/*Página de inicio*/
 #tituloInicio {
     font-weight: 1000;
     font-size: 100px;
@@ -94,18 +102,48 @@ section {
     border: 3px solid rgb(161, 100, 100);
 }
 
-.carousel-control-prev-icon {
+#carouselInicio .carousel-control-prev-icon {
     background-image: url(prev.png);
     height: 10%;
     width: 30%;
     margin-left: -50%;
 }
 
-.carousel-control-next-icon {
+#carouselInicio .carousel-control-next-icon {
     background-image: url(next.png);
     height: 10%;
     width: 30%;
     margin-right: -50%;
+}
+
+#carouselInicio .carousel-caption {
+    background-color: rgba(110, 37, 37, 0.7);
+    width: 36%;
+    left: 32%;
+    border: 1px solid rgb(68, 27, 27);
+    padding-bottom: 0;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#carouselInicio .carousel-caption h5 {
+    font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+    #carouselInicio .carousel-caption {
+        width: 66%;  /* Change the width to 50% for medium and smaller screens */
+        left: 17%;   /* Change the left to 25% for medium and smaller screens */
+    }
+}
+
+.carousel-indicators {
+    margin-bottom: 0;
+}
+
+.carousel-indicators li {
+    background-color: rgb(110, 37, 37);
+    height: 5px;
+    width: 10%;
 }
 
 .container.intro, .container.story {

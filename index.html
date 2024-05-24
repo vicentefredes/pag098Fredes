@@ -45,36 +45,54 @@
     <div id="main">
 
         <!-- Me -->
-            <article id="home" class="panel intro">
-                <header>
-                    <h1 id="tituloInicio">098</h1>
-                    <p>by Fredes</p>
-                </header>
-
-                <section id="seccionInicio">
-                    <div id="carouselInicio" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img class="d-block w-100" src="img/slide1.png" alt="First slide">
-                          </div>
-                          <div class="carousel-item">
-                            <img class="d-block w-100" src="img/slide2.png" alt="Second slide">
-                          </div>
-                          <div class="carousel-item">
-                            <img class="d-block w-100" src="img/slide3.png" alt="Third slide">
-                          </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselInicio" role="button" data-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Prev.</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselInicio" role="button" data-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Next</span>
-                        </a>
-                      </div>
-                </section>
-            </article>
+          <article id="home" class="panel intro">
+            <header>
+              <h1 id="tituloInicio">098</h1>
+              <p>by Fredes</p>
+            </header>
+      
+            <section id="seccionInicio">
+              <div id="carouselInicio" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselInicio" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselInicio" data-slide-to="1"></li>
+                  <li data-target="#carouselInicio" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100 img-fluid" src="img/slide1.png" alt="First slide">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Experience Culinary Excellence</h5>
+                      <p>Innovation and authenticity in every bite.</p>
+                    </div>
+                    </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100 img-fluid" src="img/slide2.png" alt="Second slide">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>A Universal Dining Experience</h5>
+                      <p>Celebrating global cuisine with top-notch service.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item img-fluid">
+                    <img class="d-block w-100" src="img/slide3.png" alt="Third slide">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Bringing People Together</h5>
+                      <p>Creating memorable experiences through food.</p>
+                    </div>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselInicio" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Prev.</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselInicio" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+          </section>
+      </article>
+      
 
             <article id="about" class="panel">
                 <header>
@@ -1436,7 +1454,8 @@
                   total = 0;
 
                   updateCart();
-                  updateBadge()
+                  updateBadge();
+
                 } else if (carro.length === 0) {
                   $("#ordenAlert").html(`
                       <div class="col-md-8 col-sm-12">
